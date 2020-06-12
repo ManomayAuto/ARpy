@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<style>
+.user{
+    background: linear-gradient(42deg, rgb(14, 131, 150) 30%, rgb(151, 228, 236) 100%);
+
+    }
+    .bd {
+          -webkit-animation: bd 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) ;
+          animation: bd 2s cubic-bezier(0.550, 0.085, 0.680, 0.530) ;
+          padding-bottom: 10px;
+    }
+    @-webkit-keyframes bd {
+      0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes bd {
+      0% {
+        -webkit-filter: blur(12px);
+                filter: blur(12px);
+        opacity: 0;
+      }
+      100% {
+        -webkit-filter: blur(0px);
+                filter: blur(0px);
+        opacity: 1;
+      }
+    }
+
+
+    .container.py-4 {
+       width: 450px;
+        padding: 0px 15px 0 15px;
+        display: inline-block;
+
+    }
+    @media screen and (max-width: 400px){
+        .user{
+        padding: 5px !important;
+        }
+
+    }
+    .bg{
+        background-image: linear-gradient( 109.6deg,  rgba(204,228,247,1) 11.2%, rgba(237,246,250,1) 100.2% );
+        display: block;
+        width:100%;
+        height: 100%;
+        background-size: cover;
+        z-index: 1;
+        background-repeat: no-repeat;
+
+    }
+
+    .input {
+        position: relative;
+        height: 70px;
+        overflow: hidden;
+      }
+
+      .input__item {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        padding-top: 13px;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+        margin-top:6px;
+      }
+      .input__label {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        border-bottom: 1px solid white;
+      }
+
+      .input__label-name {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        padding-bottom: 2px;
+        transform-origin: 0 0;
+        transition: all 0.3s ease;
+        font-size:16px;
+      }
+      .input__item:focus {
+        outline: none;
+      }
+      .input__item:focus + .input__label .input__label-name,
+      .input__item:valid + .input__label .input__label-name {
+        transform: translateY(-110%) scale(0.85);
+        left: 0px;
+        color: #fff;
+      }
+      .input__item:focus + .input__label-name::after,
+      .input__item:valid + .input__label-name::after {
+        transform: translateX(0%);
+      }
+
+
+     .example-form {
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .example-full-width {
+        width: 90%;
+      }
+
+    /* ::ng-deep .mat-form-field.mat-form-field-invalid .mat-input-element {
+        color: #ff33cc;
+    }
+    ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+        color: #ff33cc!important;
+    }
+    ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label .mat-form-field-required-marker {
+        color: #ff33cc;
+    }
+    ::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+        background-color: #ff33cc;
+    }  */
+
+      @keyframes kenburns {
+        0% {
+          -webkit-transform: scale(1) translateY(0);
+                  transform: scale(1) translateY(0);
+          -webkit-transform-origin: 50% 16%;
+                  transform-origin: 50% 16%;
+        }
+        60% {
+          -webkit-transform: scale(1.25) translateY(-15px);
+                  transform: scale(1.25) translateY(-15px);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+
+        }
+        100%{
+            -webkit-timing-function:ease;
+-webkit-iteration-count:1;
+      }
+    }
+
+    .logi{
+        width:250px;
+        height:auto;
+    }
+    #logg{
+        position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-top: 75px;
+    }
+
+    #backg{
+        /* background-color: #d8f7fa;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2000' height='2000' viewBox='0 0 20 20'%3E%3Cg %3E%3Cpolygon fill='%23eaffff' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%23eaffff' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E"); */
+/* background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2358817b' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%236a9c96' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2358817b' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%236a9c96' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%237db8b0' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%2394b3a7' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%23b4d9ca' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23d4ffee' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%23b4d9ca' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%2394b3a7' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23d4ffee' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%2394b3a7' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23d4ffee' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%23b4d9ca' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23d4ffee' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
+/* background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2305616a' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%23067681' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2305616a' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%23067681' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23078b98' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%237fa2a1' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%239ac5c4' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%239ac5c4' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%237fa2a1' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%237fa2a1' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%239ac5c4' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
+/* background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2304484e' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%2304585f' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2304484e' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%2304585f' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23056770' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%237fa2a1' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%239ac5c4' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%239ac5c4' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%237fa2a1' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%237fa2a1' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%239ac5c4' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
+background-repeat:repeat;
+padding:0; margin:0;
+background-color: #ffffff;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2382a5b3' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%239ec8d9' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2382a5b3' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%239ec8d9' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23baebff' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%2373a6b0' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%238bc9d6' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%238bc9d6' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%2373a6b0' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%2373a6b0' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%238bc9d6' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media (max-width: 720px){
+  #backg{
+   /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2304484e' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%2304585f' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2304484e' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%2304585f' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23056770' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%237fa2a1' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%239ac5c4' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%239ac5c4' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%237fa2a1' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%237fa2a1' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%239ac5c4' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2382a5b3' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%239ec8d9' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2382a5b3' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%239ec8d9' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23baebff' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%2373a6b0' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%238bc9d6' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%238bc9d6' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%2373a6b0' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%2373a6b0' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%238bc9d6' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+
+  }
+  .container.py-4 {
+          padding-left:20px;
+          padding-right:20px;
+          }
+}
+@media (max-width: 1024px){
+  #backg{
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1700' height='1700' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2304484e' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%2304585f' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2304484e' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%2304585f' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23056770' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%237fa2a1' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%239ac5c4' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%239ac5c4' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%237fa2a1' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23b5e8e6' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%237fa2a1' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%239ac5c4' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23b5e8e6' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E"); */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1000' height='1000' viewBox='0 35 200 200'%3E%3Cg %3E%3Cpolygon fill='%2382a5b3' points='100 57.1 64 93.1 71.5 100.6 100 72.1'/%3E%3Cpolygon fill='%239ec8d9' points='100 57.1 100 72.1 128.6 100.6 136.1 93.1'/%3E%3Cpolygon fill='%2382a5b3' points='100 163.2 100 178.2 170.7 107.5 170.8 92.4'/%3E%3Cpolygon fill='%239ec8d9' points='100 163.2 29.2 92.5 29.2 107.5 100 178.2'/%3E%3Cpath fill='%23baebff' d='M100 21.8L29.2 92.5l70.7 70.7l70.7-70.7L100 21.8z M100 127.9L64.6 92.5L100 57.1l35.4 35.4L100 127.9z'/%3E%3Cpolygon fill='%2373a6b0' points='0 157.1 0 172.1 28.6 200.6 36.1 193.1'/%3E%3Cpolygon fill='%238bc9d6' points='70.7 200 70.8 192.4 63.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='27.8 200 63.2 200 70.7 192.5 0 121.8 0 157.2 35.3 192.5'/%3E%3Cpolygon fill='%238bc9d6' points='200 157.1 164 193.1 171.5 200.6 200 172.1'/%3E%3Cpolygon fill='%2373a6b0' points='136.7 200 129.2 192.5 129.2 200'/%3E%3Cpolygon fill='%23a4edfc' points='172.1 200 164.6 192.5 200 157.1 200 157.2 200 121.8 200 121.8 129.2 192.5 136.7 200'/%3E%3Cpolygon fill='%2373a6b0' points='129.2 0 129.2 7.5 200 78.2 200 63.2 136.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='200 27.8 200 27.9 172.1 0 136.7 0 200 63.2 200 63.2'/%3E%3Cpolygon fill='%238bc9d6' points='63.2 0 0 63.2 0 78.2 70.7 7.5 70.7 0'/%3E%3Cpolygon fill='%23a4edfc' points='0 63.2 63.2 0 27.8 0 0 27.8'/%3E%3C/g%3E%3C/svg%3E");
+
+}
+}
+
+    .mat-dialog-container {
+        box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !important;
+        background: linear-gradient(42deg, rgba(42,46,54,1) 0%, rgba(97,107,125,1) 100%) !important;
+        color: #fff !important;
+      }
+    .form-wrap form .button {
+        margin: 2em 0;
+        margin-left: 5px;
+        padding: .5em 3em;
+        width: 120px;
+        font-weight: 600;
+        font-size: 16px;
+        display: block;
+        background-color: #28A55F;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        font-size: .8em;
+        border-radius: 30px;
+        background: -moz-linear-gradient(270deg, rgba(105,221,201,1) 0%, rgba(78,193,182,1) 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(105,221,201,1)), color-stop(100%, rgba(78,193,182,1)));
+        background: -webkit-linear-gradient(270deg, rgba(105,221,201,1) 0%, rgba(78,193,182,1) 100%);
+        background: linear-gradient(180deg, rgba(105,221,201,1) 0%, rgba(78,193,182,1) 100%);
+        -webkit-box-shadow: 0px 0px 37px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 37px -9px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 37px -9px rgba(0,0,0,0.75);
+    }
+
+    .form-wrap .tabs {
+        overflow: hidden;
+    }
+    .form-wrap .tabs-content {
+        width: auto;
+        margin-top: -50px;
+        padding: 10px;
+    }
+    .form-wrap .tabs h3 {
+        float: left;
+        margin-left:20px;
+         padding: 0.5em 0;
+         font-size:20px;
+    }
+
+    .form-wrap a {
+        color: #fff;
+        border-bottom: 3px solid #5FD1C1;
+        text-decoration:none;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+   }
+    .container-fluid {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+   }
+    .wrapper {
+        overflow-x: hidden;
+        height: 100vh;
+   }
+
+    .heading {
+        font-family: 'Lato', sans-serif;
+        color: #2196f3;
+        letter-spacing: -2px;
+   }
+    .paragraph {
+        color: rgba(53, 53, 53, .7);
+   }
+    form {
+        min-width: 150px;
+        margin: 50px auto;
+   }
+body {
+	/* background-color: #F2f2f2; */
+	background-color: #ffff;
+	height:100%;
+	overflow-x:hidden;
+	    font-family: sans-serif;
+  -webkit-overflow-scrolling: touch;
+}
+.h1{
+font-size:14px;
+
+}
+
+.container-fluid {
+	background-color: #fff;
+	height: 100vh;
+}
+</style>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Mantra</title>
+
+    <script src="/static/js/modernizr-2.8.3.js"></script>
+
+
+
+    <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid" id="backg"><div data-type="default" class="container py-4" id="logg">
+
+    <div class="user"  style="border-radius:5px;padding: 20px;">
+            <div class="form-wrap">
+
+                <div class="tabs" style="background-color: transparent;">
+                    <h3 class="login-tab"><a class="log-in active">Admin Login</a></h3>
+                </div>
+
+                <div class="tabs-content">
+                    <div class="container"><div id="login-tab-content" class="active">
+                            <form class="example-form" id="LoginForm" action="/" method="post">
+                                      <div class="input">
+                                            <input class="input__item" type="text" formControlName="username" id="Username" name="email" autocomplete="off" required />
+                                            <label class="input__label" for="text">
+                                              <span class="input__label-name" style="color:#fff;">
+                                                    Username
+                                              </span>
+                                            </label>
+                                          </div>
+                                          <div class="input">
+                                                <input class="input__item" id="Password" name="password" type="Password" formControlName="password" autocomplete="off" required />
+                                                <label class="input__label" for="Password">
+                                                  <span class="input__label-name" style="color:#fff;">
+                                                        Password
+                                                  </span>
+                                                </label>
+                                              </div>
+                                <input type="submit"  class="button" value="Login">
+                            </form>
+                            <div class="help-action">
+                                <p><a class="forgot" style="cursor:pointer" href="/resetpass">Forgot your password?</a></p>
+                            </div>
+                        </div></div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="bd" style="text-align: center;"><svg class="loge" style="text-align:center;" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 106.92274 108.45064" version="1.1" id="svg8" sodipodi:docname="jsjmain.svg" inkscape:version="0.92.3 (2405546, 2018-03-11)">
+          <defs id="defs2">
+            <symbol id="Extract">
+              <title id="title2830">Extract</title>
+              <desc id="desc2832">Removal of one or more specific sets of times from a set. (ISO)</desc>
+              <path d="M 9.2604167,30.427083 19.84375,11.90625 30.427083,30.427083 Z" style="stroke-width:0.52916664" id="path2834"/>
+            </symbol>
+            <symbol id="AuxillaryOp">
+              <title id="title2816">Auxiliary Operation</title>
+              <desc id="desc2818">Offline operation.</desc>
+              <rect x="9.260417" y="9.260417" width="21.166666" height="21.166666" style="stroke-width:0.52916664" id="rect2820"/>
+            </symbol>
+          </defs>
+          <g  id="layer1" transform="translate(-40.254466,-109.79775)">
+            <rect style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.09832478;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect8721" width="66.838821" height="67.249321" x="147.71042" y="10.845387" ry="0.42138687" transform="matrix(0.68593167,0.72766595,-0.70339185,0.71080229,0,0)"/>
+            <path style="fill:#12919d;stroke-width:1.52746153" d="m 67.351206,191.12025 -27.09674,-27.12814 27.12859,-27.09718 27.12858,-27.09718 26.332784,26.36507 c 14.48303,14.50079 26.33278,27.05263 26.33278,27.89298 0,0.84035 -11.86408,13.37747 -26.36463,27.86025 l -26.364624,26.33234 z m 32.47469,12.61726 c 3.885284,-4.00859 4.533474,-5.34611 2.590834,-5.34611 -2.16586,0 -2.590834,-1.60116 -2.590834,-9.76139 v -9.76139 l -5.34612,-0.62412 -5.34611,-0.62413 v 10.38551 c 0,9.67643 -0.22904,10.38552 -3.35457,10.38552 -3.10641,0 -2.97126,0.39545 1.82711,5.34611 2.84991,2.94036 5.59934,5.34612 6.10984,5.34612 0.51051,0 3.25994,-2.40576 6.10985,-5.34612 z m -19.857,-15.92924 c 0,-3.4186 -1.03286,-7.0336 -2.4003,-8.40104 -2.37391,-2.37391 -14.40178,-3.46561 -14.40178,-1.30717 0,1.50284 14.10674,15.70895 15.59906,15.70895 0.66166,0 1.20302,-2.70033 1.20302,-6.00074 z m 36.988474,-1.19728 c 4.01935,-3.95891 7.3079,-7.73938 7.3079,-8.40104 0,-1.51523 -10.85813,-1.54325 -13.18945,-0.034 -1.65312,1.07018 -3.65466,15.63309 -2.14863,15.63309 0.39724,0 4.01083,-3.23911 8.03018,-7.19802 z m -18.682324,-14.5683 c -0.0429,-3.50498 -2.48223,-5.84289 -5.06298,-4.85257 -3.02232,1.15978 -3.20857,2.43835 -0.71799,4.92894 2.39606,2.39606 5.8107,2.35095 5.78097,-0.0764 z m -20.805296,-4.0931 c 10.45416,0.6773 10.107048,2.68023 8.794618,1.3678 -0.96143,-0.96143 -3.238942,-5.02275 -3.236962,-6.74497 0.003,-2.94134 3.776738,-2.40445 -7.877352,-1.93108 -7.47794,0.30373 -17.583518,-0.8434 -18.571308,-1.83118 -1.16681,-1.16681 -0.219308,-2.4237 -2.734308,-0.061 l -5.969362,5.05922 3.31182,3.52528 c 2.56293,2.72811 3.78365,3.1337 5.39835,1.79362 1.40552,-1.16649 11.504904,-1.78537 20.884504,-1.1777 z m 58.74779,-0.58649 3.32002,-3.534 -4.58122,-4.38909 c -2.26364,-2.16871 -2.39849,-1.57506 -2.99108,-1.54015 -0.4156,0.0245 -1.59014,-1.02654 -1.59014,-0.0601 0,2.55072 -1.16866,2.7222 -13.68773,2.00839 -7.52826,-0.42924 -13.98341,-0.48476 -14.3448,-0.12337 -0.36138,0.36139 -2.16404,2.96894 -1.26958,5.33853 l 3.86495,3.93521 12.71858,-0.79348 c 8.97191,-0.55974 14.55694,-1.19928 14.55694,0.0301 0,1.12621 -0.93601,1.01708 -0.24062,1.00368 0.99536,-0.0191 2.1176,0.38847 4.24468,-1.8757 z M 96.097836,157.29651 c -1.44848,-2.34368 -6.96417,-2.09684 -6.96417,0.31166 0,1.09214 0.82974,2.81544 1.84386,3.82957 1.44018,1.44018 2.31579,1.37194 3.99939,-0.31166 1.18554,-1.18554 1.68995,-2.90885 1.12092,-3.82957 z m 3.72806,-19.73374 c 0,-9.96677 0.432224,-9.4346 2.344344,-9.4346 1.45127,0 0.28751,-1.80593 -3.054924,-4.74062 l -5.39927,-4.74062 -5.23073,4.59265 c -4.64791,4.08091 -4.9032,4.67829 -2.29119,5.36134 2.54928,0.66665 2.358749,2.21189 2.93954,11.50248 0.958218,15.32809 -0.465202,10.79348 3.658168,11.41741 0.332418,0.0503 1.715801,0.91196 3.166377,1.46798 1.808354,0.69316 3.721135,0.91139 3.832346,-1.50913 0.05713,-1.2434 0.106201,2.36363 -0.05799,-1.05286 -0.130175,-2.70868 0.09333,-11.85887 0.09333,-12.86403 z m -20.268288,5.27044 c -0.08005,-4.14951 0.146338,-7.84183 -0.340922,-8.3291 -0.48727,-0.48726 -4.81334,3.0644 -9.6135,7.89258 l -8.72756,8.77852 8.37221,-0.44943 10.461036,-0.0513 z m 38.597822,-0.19416 c -4.56318,-4.62057 -8.68201,-8.40104 -9.15296,-8.40104 -0.89511,0 -1.01856,12.62686 0.0546,15.93716 0.39104,1.20624 4.31662,0.86492 9.38015,0.86492 h 8.01493 z" id="path826" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccsssccssscccsssssssssscscscccccccssccccccccsssssscccsssscscscscscccsccssscssccccsscscssc"/>
+            <use id="use8661" style="fill:#ffffff;fill-opacity:1;stroke:none" xlink:href="#Extract" x="0" y="0" width="100%" height="100%" transform="matrix(1.0192337,0,0,0.54189855,73.490627,112.19495)"/>
+            <use transform="matrix(0.00766463,-0.83158895,0.44213299,0.00407508,42.831958,180.77169)" height="100%" width="100%" y="0" x="0" xlink:href="#Extract" style="fill:#ffffff;fill-opacity:1;stroke:none" id="use8679"/>
+            <use id="use8681" style="fill:#ffffff;fill-opacity:1;stroke:none" xlink:href="#Extract" x="0" y="0" width="100%" height="100%" transform="matrix(0.03992557,0.85269257,-0.46983229,0.02009015,144.34466,146.41418)"/>
+            <use id="use8695" style="fill:#ffffff;fill-opacity:1;stroke:none" xlink:href="#AuxillaryOp" x="0" y="0" width="100%" height="100%" transform="matrix(0.42510067,0,0,1.3213139,85.790934,112.57607)"/>
+            <use transform="matrix(-0.00339365,0.39769792,-1.3212718,-0.00986861,146.44347,156.37336)" height="100%" width="100%" y="0" x="0" xlink:href="#AuxillaryOp" style="fill:#ffffff;fill-opacity:1;stroke:none" id="use8711"/>
+            <use id="use8713" style="fill:#ffffff;fill-opacity:1;stroke:none" xlink:href="#AuxillaryOp" x="0" y="0" width="100%" height="100%" transform="matrix(-0.00339365,0.37348406,-1.3212718,-0.00926776,93.46002,156.95243)"/>
+          </g>
+        </svg></div>
+</div>
+  <script src="/static/js/jquery-3.3.1.js"></script>
+                         <div class="container" align="center">
+                    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible" role="alert" style="">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><strong>×</strong></span></button>
+                        <strong>{{message}}</strong>
+                    </div>
+                    {% endfor %} {% endif %} {% endwith %} {% block body %}{% endblock %}
+                </div>
+                         <script>
+                    $(".alert").delay(3000).slideUp(200, function() {
+                        $(this).alert('close');
+                    });
+                </script>
+
+</div>
+
+
+
+
+
+
+
+
+    <!--<script>
+    var login = function () {
+        var data = $("#LoginForm").serialize();
+        console.log(data);
+        $.ajax({
+            type: "Post",
+            url: "/Icbl/Loginform",
+            data: data,
+
+        })
+    }
+</script>-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+
+    <script src="/static/js/bootstrap.js"></script>
+
+
+</body>
+
+</html>

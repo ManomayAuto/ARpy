@@ -1,0 +1,8 @@
+[emaildata]
+emailid =dontreply@jsjemail.com
+password =+lS8+yLk
+encrypted = No
+port = 25
+domain = mailout-vip.bfmglobal.com
+
+Note: Please ensure there are no additional spaces for emailid, password

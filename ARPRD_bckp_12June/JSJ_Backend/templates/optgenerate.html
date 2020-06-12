@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Mantra</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" />
+</head>
+<style>
+    #wrapper {
+
+        font-family: Roboto,"Helvetica Neue",sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        box-sizing: border-box;
+        color: #333;
+    }
+    
+    #wrapper #dialog {
+        border: solid 1px #ccc;
+        margin: 10px auto;
+        padding: 20px 30px;
+        display: inline-block;
+        box-shadow: 0 0 4px #ccc;
+        background-color: #FAF8F8;
+        overflow: hidden;
+        position: relative;
+        max-width: 450px;
+         box-shadow: 10px 10px 78px 2px rgba(0, 0, 0, 0.75);
+    }
+    
+    #wrapper #dialog h3 {
+        margin: 0 0 10px;
+        padding: 0;
+        line-height: 1.25;
+    }
+    
+    #wrapper #dialog span {
+        font-size: 90%;
+    }
+    
+    #wrapper #dialog #form {
+        max-width: 240px;
+        margin: 25px auto 0;
+    }
+    
+    #wrapper #dialog #form input {
+        margin: 0 5px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 50px;
+        border: solid 1px #ccc;
+        box-shadow: 0 0 5px #ccc inset;
+        outline: none;
+        width: 14%;
+        transition: all 0.2s ease-in-out;
+        border-radius: 3px;
+    }
+    
+    #wrapper #dialog #form input:focus {
+        border-color: #2C80a2;
+        box-shadow: 0 0 5px #2C80a2 inset;
+    }
+    
+    #wrapper #dialog #form input::selection {
+        background: transparent;
+    }
+    
+    #wrapper #dialog #form button {
+        margin: 30px 0 50px;
+        width: 100%;
+        padding: 6px;
+        background-color: #2C80a2;
+        border: none;
+        text-transform: uppercase;
+    }
+    
+    #wrapper #dialog button.close {
+        border: solid 2px;
+        border-radius: 30px;
+        line-height: 19px;
+        font-size: 120%;
+        width: 22px;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+    
+    #wrapper #dialog div {
+        position: relative;
+        z-index: 1;
+    }
+    
+    #wrapper #dialog img {
+        position: absolute;
+        bottom: -70px;
+        right: -63px;
+    }
+    
+    #message {
+        color: #fff;
+    }
+    
+    #container {
+        text-align: center;
+    }
+    
+    .countDown {
+        border: solid .5px #fff;
+        border-radius: 65px;
+        font-size: 75px;
+        background-color: #2C80a2;
+        color: #fff;
+    }
+    
+    div#placement {
+        width: 220px;
+        margin: 0 auto;
+        margin-top: -20px;
+    }
+    
+    h4 {
+        height: 80px;
+    }
+    
+    .submit {
+        width: 50% !important;
+        color: white;
+        background-color: #2C80a2;
+        border-color: #2C80a2;
+    }
+
+</style>
+
+<body class="container-fluid" style="background-color:rgb(131, 230, 255) !important;">
+    <div id="wrapper">
+        <div id="dialog">
+<!--            <button class="close">×</button>-->
+            <h3>Please enter the 4-digit verification code we sent via SMS:</h3>
+            <span>(we want to make sure it's you)</span>
+            <form id="form" action="/checkotp" method="POST">
+                <input type="text" name="emailid" value="{{email}}" style="display:none;" />
+                <input type="text" name="0" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                <input type="text" name="1" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                <input type="text" name="2" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                <input type="text" name="3" maxlength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                <br>
+                <br>
+                <button type="submit" class="submit" style="margin:10px 0 10px 5px">verify</button>
+
+            </form>
+
+            <div>
+                Didn't receive the code?<br />
+                <a href="javascript:window.location.reload();">Send code again</a><br />
+                <a href="/resetpass">Change Email</a>
+            </div>
+            <div id="container">
+                <h4 id="message">OTP Expires in</h4>
+                <div id="placement">
+                    <h4 class="clock countDown"></h4>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script>
+    $(function() {
+        'use strict';
+
+        var body = $('body');
+
+        function goToNextInput(e) {
+            var key = e.which,
+                t = $(e.target),
+                sib = t.next('input');
+
+            if (key != 9 && (key < 48 || key > 57)) {
+                e.preventDefault();
+                return false;
+            }
+
+            if (key === 9) {
+                return true;
+            }
+
+            if (!sib || !sib.length) {
+                sib = body.find('input').eq(0);
+            }
+            sib.select().focus();
+        }
+
+        function onKeyDown(e) {
+            var key = e.which;
+
+            if (key === 9 || (key >= 48 && key <= 57)) {
+                return true;
+            }
+
+            e.preventDefault();
+            return false;
+        }
+
+        function onFocus(e) {
+            $(e.target).select();
+        }
+
+        body.on('keyup', 'input', goToNextInput);
+        body.on('keydown', 'input', onKeyDown);
+        body.on('click', 'input', onFocus);
+
+    })
+
+    /* Count down*/
+
+    $(document).ready(function() {
+
+        $('.clock').text("02:00");
+        countdown();
+    });
+    var interval;
+
+    function countdown() {
+        clearInterval(interval);
+        interval = setInterval(function() {
+            var timer = $('.clock').html();
+            timer = timer.split(':');
+            var minutes = timer[0];
+            var seconds = timer[1];
+            seconds -= 1;
+            if (minutes < 0) return;
+            else if (seconds < 0 && minutes != 0) {
+                minutes -= 1;
+                seconds = 59;
+            } else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+            $('.clock').html(minutes + ':' + seconds);
+
+            if (minutes == 0 && seconds == 0) {
+                clearInterval(interval);
+                var result = confirm("Sorry OTP Expired");
+                if(result == true){
+                window.location.reload();
+                }
+                else{
+                window.location.href="/";
+                }
+            }
+
+        }, 1000);
+    }
+</script>
+
+
+</html>

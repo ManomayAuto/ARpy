@@ -1,0 +1,1 @@
+forfiles /p "C:\Users\administrator.JSJHO\Desktop\Consultant Files\Mantra\TempFolder" /m *.xlsx /c "cmd /c del @path"

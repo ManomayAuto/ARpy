@@ -1,0 +1,3699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mantra</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://jackocnr.com/lib/intl-tel-input/lib/libphonenumber/build/utils.js"></script>
+    <style type="text/css">
+        
+        .navbar-brand {
+            float: left;
+            height: 100px;
+            padding: 15px 15px;
+            font-size: 18px;
+            line-height: 20px;
+            opacity: 0;
+        }
+        
+        .navbar-header {
+            float: left;
+            width: 200px;
+            background-image: url(https://www.icbl.com/media/1030/icbl_logo_240.png?width=183&amp;height=75);
+            background-repeat: no-repeat;
+            background-size: 175px 75px;
+        }
+        
+        #Logout {
+            padding: 10px;
+            width: 100px;
+        }
+        
+        .button {
+            background-color: white;
+            border-radius: 80px;
+            border: #2c80a2 solid 1px;
+            color: black;
+            width: 150px;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-left: 50%;
+        }
+        
+        #heading {
+            color: #2c80a2;
+            font-weight: bold;
+            font-size: 35px;
+            text-align: center;
+            margin-top: 15px;
+            width: 80%;
+            font-family: "open_sans_light", sans-serif;
+        }
+        
+        body {
+            color: #566787;
+            background: #f5f5f5;
+            font-family: 'Varela Round', sans-serif;
+            font-size: 13px;
+        }
+        
+        .table-wrapper {
+            background: #fff;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            margin-top: 10%;
+        }
+        
+        .table-title {
+            padding-bottom: 15px;
+            background: #2c80a2;
+            color: #fff;
+            padding: 16px 30px;
+            margin: -20px -25px 10px;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .table-title h2 {
+            margin: 5px 0 0;
+            font-size: 24px;
+        }
+        
+        .table-title .btn-group {
+            float: right;
+        }
+        
+        .table-title .btn {
+            color: #fff;
+            float: right;
+            font-size: 13px;
+            border: none;
+            min-width: 50px;
+            border-radius: 2px;
+            border: none;
+            outline: none !important;
+            margin-left: 10px;
+        }
+        
+        .table-title .btn i {
+            float: left;
+            font-size: 21px;
+            margin-right: 5px;
+        }
+        
+        .table-title .btn span {
+            float: left;
+            margin-top: 2px;
+        }
+        
+        table.table tr th,
+        table.table tr td {
+            border-color: #e9e9e9;
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+        
+        table.table tr th:first-child {
+            width: 60px;
+        }
+        
+        table.table tr th:last-child {
+            width: 100px;
+        }
+        
+        table.table-striped tbody tr:nth-of-type(odd) {
+            background-color: #fcfcfc;
+        }
+        
+        table.table-striped.table-hover tbody tr:hover {
+            background: #f5f5f5;
+        }
+        
+        table.table th i {
+            font-size: 13px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        table.table td:last-child i {
+            opacity: 0.9;
+            font-size: 22px;
+            margin: 0 5px;
+        }
+        
+        table.table td a {
+            font-weight: bold;
+            color: #566787;
+            display: inline-block;
+            text-decoration: none;
+            outline: none !important;
+        }
+        
+        table.table td a:hover {
+            color: #2196F3;
+        }
+        
+        table.table td a.edit {
+            color: #FFC107;
+        }
+        
+        table.table td a.delete {
+            color: #F44336;
+        }
+        
+        table.table td i {
+            font-size: 19px;
+        }
+        
+        table.table .avatar {
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        .pagination {
+            float: right;
+            margin: 0 0 5px;
+        }
+        
+        .pagination li a {
+            border: none;
+            font-size: 13px;
+            min-width: 30px;
+            min-height: 30px;
+            color: #999;
+            margin: 0 2px;
+            line-height: 30px;
+            border-radius: 2px !important;
+            text-align: center;
+            padding: 0 6px;
+        }
+        
+        .pagination li a:hover {
+            color: #666;
+        }
+        
+        .pagination li.active a,
+        .pagination li.active a.page-link {
+            background: purple;
+        }
+        
+        .pagination li.active a:hover {
+            background: #0397d6;
+        }
+        
+        .pagination li.disabled i {
+            color: #ccc;
+        }
+        
+        .pagination li i {
+            font-size: 16px;
+            padding-top: 6px
+        }
+        
+        .hint-text {
+            float: left;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        
+        radio {
+            display: block;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none
+        }
+        /* Hide the browser's default radio button */
+        
+        .radio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        /* Create a custom radio button */
+        
+        .checkround {
+            position: absolute;
+            top: 6px;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border-color: #f8204f;
+            border-style: solid;
+            border-width: 2px;
+            border-radius: 50%;
+        }
+        /* When the radio button is checked, add a blue background */
+        
+        .radio input:checked~.checkround {
+            background-color: #fff;
+        }
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        
+        .checkround:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        /* Show the indicator (dot/circle) when checked */
+        
+        .radio input:checked~.checkround:after {
+            display: block;
+        }
+        /* Style the indicator (dot/circle) */
+        
+        .radio .checkround:after {
+            left: 2px;
+            top: 2px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #f8204f;
+        }
+        /* Modal styles */
+        
+        .modal .modal-dialog {
+            max-width: 400px;
+        }
+        
+        .modal .modal-header,
+        .modal .modal-body,
+        .modal .modal-footer {
+            padding: 20px 30px;
+        }
+        
+        .modal .modal-content {
+            border-radius: 3px;
+        }
+        
+        .modal .modal-footer {
+            background: #ecf0f1;
+            border-radius: 0 0 3px 3px;
+        }
+        
+        .modal .modal-title {
+            display: inline-block;
+        }
+        
+        .modal .form-control {
+            border-radius: 2px;
+            box-shadow: none;
+            border-color: #dddddd;
+        }
+        
+        .modal textarea.form-control {
+            resize: vertical;
+        }
+        
+        .modal .btn {
+            border-radius: 2px;
+            min-width: 100px;
+        }
+        
+        .modal form label {
+            font-weight: normal;
+        }
+        
+        .box {
+            color: #fff;
+            padding: 20px;
+            display: none;
+            margin-left: 140px;
+            margin-top: -80px;
+            height: 130px;
+            width: 200px;
+        }
+        
+        .AgentsApp {
+            background: purple;
+            display: block;
+        }
+        
+        label {
+            margin-right: 15px;
+        }
+        
+        .passcontainer {
+            margin: 0 auto;
+            border: 1px solid gray;
+            width: 330px;
+            box-sizing: border-box;
+            padding: 20px;
+            background: white;
+        }
+        
+        .passrow {
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .passleft {
+            width: 30%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .passright {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #frown,
+        #meh,
+        #smile {
+            font-size: 16px;
+            display: none;
+        }
+        
+        #frown {
+            color: red;
+        }
+        
+        #meh {
+            color: orange;
+        }
+        
+        #smile {
+            color: green;
+        }
+        
+        #passstatus {
+            font-size: 13px;
+            color: gray;
+        }
+        
+        #weaks,
+        #meds,
+        #strongs {
+            width: 50px;
+            height: 3px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .passrow3 {
+            line-height: 22px;
+            font-size: 13px;
+            width: 80%;
+            margin: 0 auto;
+            color: darkgray;
+        }
+        
+        #strong {
+            color: green;
+            font-size: 12px;
+        }
+        
+        #submit,
+        #reset {
+            display: none;
+        }
+        
+        .passcontainer1 {
+            margin: 0 auto;
+            width: 330px;
+            padding: 20px;
+            background: white;
+        }
+        
+        .passrow1 {
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .passleft1 {
+            width: 30%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .passright1 {
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #frown1,
+        #meh1,
+        #smile1 {
+            font-size: 16px;
+            display: none;
+        }
+        
+        #frown1 {
+            color: red;
+        }
+        
+        #meh1 {
+            color: orange;
+        }
+        
+        #smile1 {
+            color: green;
+        }
+        
+        #passstatus1 {
+            font-size: 13px;
+            color: gray;
+        }
+        
+        #weaks1,
+        #meds1,
+        #strongs1 {
+            width: 50px;
+            height: 3px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        .passrow31 {
+            line-height: 22px;
+            font-size: 13px;
+            width: 80%;
+            margin: 0 auto;
+            color: darkgray;
+        }
+        
+        #strong1 {
+            color: green;
+            font-size: 12px;
+        }
+        
+        #submit1,
+        #reset1 {
+            display: none;
+        }
+        
+        #output {
+            width: 100px;
+            margin: auto;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ddd;
+        }
+        
+        .iti-flag {
+            width: 16px;
+            height: 11px;
+            background: url("../img/flags.png");
+        }
+        
+        .iti-flag.ad {
+            background-position: -16px 0;
+        }
+        
+        .iti-flag.ae {
+            background-position: -32px 0;
+        }
+        
+        .iti-flag.af {
+            background-position: -48px 0;
+        }
+        
+        .iti-flag.ag {
+            background-position: -64px 0;
+        }
+        
+        .iti-flag.ai {
+            background-position: -80px 0;
+        }
+        
+        .iti-flag.al {
+            background-position: -96px 0;
+        }
+        
+        .iti-flag.am {
+            background-position: -112px 0;
+        }
+        
+        .iti-flag.ao {
+            background-position: -128px 0;
+        }
+        
+        .iti-flag.ar {
+            background-position: -144px 0;
+        }
+        
+        .iti-flag.as {
+            background-position: -160px 0;
+        }
+        
+        .iti-flag.at {
+            background-position: -176px 0;
+        }
+        
+        .iti-flag.au {
+            background-position: -192px 0;
+        }
+        
+        .iti-flag.aw {
+            background-position: -208px 0;
+        }
+        
+        .iti-flag.az {
+            background-position: -224px 0;
+        }
+        
+        .iti-flag.ba {
+            background-position: -240px 0;
+        }
+        
+        .iti-flag.bb {
+            background-position: 0 -11px;
+        }
+        
+        .iti-flag.bd {
+            background-position: -16px -11px;
+        }
+        
+        .iti-flag.be {
+            background-position: -32px -11px;
+        }
+        
+        .iti-flag.bf {
+            background-position: -48px -11px;
+        }
+        
+        .iti-flag.bg {
+            background-position: -64px -11px;
+        }
+        
+        .iti-flag.bh {
+            background-position: -80px -11px;
+        }
+        
+        .iti-flag.bi {
+            background-position: -96px -11px;
+        }
+        
+        .iti-flag.bj {
+            background-position: -112px -11px;
+        }
+        
+        .iti-flag.bm {
+            background-position: -128px -11px;
+        }
+        
+        .iti-flag.bn {
+            background-position: -144px -11px;
+        }
+        
+        .iti-flag.bo {
+            background-position: -160px -11px;
+        }
+        
+        .iti-flag.br {
+            background-position: -176px -11px;
+        }
+        
+        .iti-flag.bs {
+            background-position: -192px -11px;
+        }
+        
+        .iti-flag.bt {
+            background-position: -208px -11px;
+        }
+        
+        .iti-flag.bw {
+            background-position: -224px -11px;
+        }
+        
+        .iti-flag.by {
+            background-position: -240px -11px;
+        }
+        
+        .iti-flag.bz {
+            background-position: 0 -22px;
+        }
+        
+        .iti-flag.ca {
+            background-position: -16px -22px;
+        }
+        
+        .iti-flag.cd {
+            background-position: -32px -22px;
+        }
+        
+        .iti-flag.cf {
+            background-position: -48px -22px;
+        }
+        
+        .iti-flag.cg {
+            background-position: -64px -22px;
+        }
+        
+        .iti-flag.ch {
+            background-position: -80px -22px;
+        }
+        
+        .iti-flag.ci {
+            background-position: -96px -22px;
+        }
+        
+        .iti-flag.ck {
+            background-position: -112px -22px;
+        }
+        
+        .iti-flag.cl {
+            background-position: -128px -22px;
+        }
+        
+        .iti-flag.cm {
+            background-position: -144px -22px;
+        }
+        
+        .iti-flag.cn {
+            background-position: -160px -22px;
+        }
+        
+        .iti-flag.co {
+            background-position: -176px -22px;
+        }
+        
+        .iti-flag.cr {
+            background-position: -192px -22px;
+        }
+        
+        .iti-flag.cu {
+            background-position: -208px -22px;
+        }
+        
+        .iti-flag.cv {
+            background-position: -224px -22px;
+        }
+        
+        .iti-flag.cw {
+            background-position: -240px -22px;
+        }
+        
+        .iti-flag.cy {
+            background-position: 0 -33px;
+        }
+        
+        .iti-flag.cz {
+            background-position: -16px -33px;
+        }
+        
+        .iti-flag.de {
+            background-position: -32px -33px;
+        }
+        
+        .iti-flag.dj {
+            background-position: -48px -33px;
+        }
+        
+        .iti-flag.dk {
+            background-position: -64px -33px;
+        }
+        
+        .iti-flag.dm {
+            background-position: -80px -33px;
+        }
+        
+        .iti-flag.do {
+            background-position: -96px -33px;
+        }
+        
+        .iti-flag.dz {
+            background-position: -112px -33px;
+        }
+        
+        .iti-flag.ec {
+            background-position: -128px -33px;
+        }
+        
+        .iti-flag.ee {
+            background-position: -144px -33px;
+        }
+        
+        .iti-flag.eg {
+            background-position: -160px -33px;
+        }
+        
+        .iti-flag.er {
+            background-position: -176px -33px;
+        }
+        
+        .iti-flag.es {
+            background-position: -192px -33px;
+        }
+        
+        .iti-flag.et {
+            background-position: -208px -33px;
+        }
+        
+        .iti-flag.fi {
+            background-position: -224px -33px;
+        }
+        
+        .iti-flag.fj {
+            background-position: -240px -33px;
+        }
+        
+        .iti-flag.fk {
+            background-position: 0 -44px;
+        }
+        
+        .iti-flag.fm {
+            background-position: -16px -44px;
+        }
+        
+        .iti-flag.fo {
+            background-position: -32px -44px;
+        }
+        
+        .iti-flag.fr,
+        .iti-flag.bl,
+        .iti-flag.mf {
+            background-position: -48px -44px;
+        }
+        
+        .iti-flag.ga {
+            background-position: -64px -44px;
+        }
+        
+        .iti-flag.gb {
+            background-position: -80px -44px;
+        }
+        
+        .iti-flag.gd {
+            background-position: -96px -44px;
+        }
+        
+        .iti-flag.ge {
+            background-position: -112px -44px;
+        }
+        
+        .iti-flag.gf {
+            background-position: -128px -44px;
+        }
+        
+        .iti-flag.gh {
+            background-position: -144px -44px;
+        }
+        
+        .iti-flag.gi {
+            background-position: -160px -44px;
+        }
+        
+        .iti-flag.gl {
+            background-position: -176px -44px;
+        }
+        
+        .iti-flag.gm {
+            background-position: -192px -44px;
+        }
+        
+        .iti-flag.gn {
+            background-position: -208px -44px;
+        }
+        
+        .iti-flag.gp {
+            background-position: -224px -44px;
+        }
+        
+        .iti-flag.gq {
+            background-position: -240px -44px;
+        }
+        
+        .iti-flag.gr {
+            background-position: 0 -55px;
+        }
+        
+        .iti-flag.gt {
+            background-position: -16px -55px;
+        }
+        
+        .iti-flag.gu {
+            background-position: -32px -55px;
+        }
+        
+        .iti-flag.gw {
+            background-position: -48px -55px;
+        }
+        
+        .iti-flag.gy {
+            background-position: -64px -55px;
+        }
+        
+        .iti-flag.hk {
+            background-position: -80px -55px;
+        }
+        
+        .iti-flag.hn {
+            background-position: -96px -55px;
+        }
+        
+        .iti-flag.hr {
+            background-position: -112px -55px;
+        }
+        
+        .iti-flag.ht {
+            background-position: -128px -55px;
+        }
+        
+        .iti-flag.hu {
+            background-position: -144px -55px;
+        }
+        
+        .iti-flag.id {
+            background-position: -160px -55px;
+        }
+        
+        .iti-flag.ie {
+            background-position: -176px -55px;
+        }
+        
+        .iti-flag.il {
+            background-position: -192px -55px;
+        }
+        
+        .iti-flag.in {
+            background-position: -208px -55px;
+        }
+        
+        .iti-flag.io {
+            background-position: -224px -55px;
+        }
+        
+        .iti-flag.iq {
+            background-position: -240px -55px;
+        }
+        
+        .iti-flag.ir {
+            background-position: 0 -66px;
+        }
+        
+        .iti-flag.is {
+            background-position: -16px -66px;
+        }
+        
+        .iti-flag.it {
+            background-position: -32px -66px;
+        }
+        
+        .iti-flag.jm {
+            background-position: -48px -66px;
+        }
+        
+        .iti-flag.jo {
+            background-position: -64px -66px;
+        }
+        
+        .iti-flag.jp {
+            background-position: -80px -66px;
+        }
+        
+        .iti-flag.ke {
+            background-position: -96px -66px;
+        }
+        
+        .iti-flag.kg {
+            background-position: -112px -66px;
+        }
+        
+        .iti-flag.kh {
+            background-position: -128px -66px;
+        }
+        
+        .iti-flag.ki {
+            background-position: -144px -66px;
+        }
+        
+        .iti-flag.km {
+            background-position: -160px -66px;
+        }
+        
+        .iti-flag.kn {
+            background-position: -176px -66px;
+        }
+        
+        .iti-flag.kp {
+            background-position: -192px -66px;
+        }
+        
+        .iti-flag.kr {
+            background-position: -208px -66px;
+        }
+        
+        .iti-flag.kw {
+            background-position: -224px -66px;
+        }
+        
+        .iti-flag.ky {
+            background-position: -240px -66px;
+        }
+        
+        .iti-flag.kz {
+            background-position: 0 -77px;
+        }
+        
+        .iti-flag.la {
+            background-position: -16px -77px;
+        }
+        
+        .iti-flag.lb {
+            background-position: -32px -77px;
+        }
+        
+        .iti-flag.lc {
+            background-position: -48px -77px;
+        }
+        
+        .iti-flag.li {
+            background-position: -64px -77px;
+        }
+        
+        .iti-flag.lk {
+            background-position: -80px -77px;
+        }
+        
+        .iti-flag.lr {
+            background-position: -96px -77px;
+        }
+        
+        .iti-flag.ls {
+            background-position: -112px -77px;
+        }
+        
+        .iti-flag.lt {
+            background-position: -128px -77px;
+        }
+        
+        .iti-flag.lu {
+            background-position: -144px -77px;
+        }
+        
+        .iti-flag.lv {
+            background-position: -160px -77px;
+        }
+        
+        .iti-flag.ly {
+            background-position: -176px -77px;
+        }
+        
+        .iti-flag.ma {
+            background-position: -192px -77px;
+        }
+        
+        .iti-flag.mc {
+            background-position: -208px -77px;
+        }
+        
+        .iti-flag.md {
+            background-position: -224px -77px;
+        }
+        
+        .iti-flag.me {
+            background-position: -112px -154px;
+            height: 12px;
+        }
+        
+        .iti-flag.mg {
+            background-position: 0 -88px;
+        }
+        
+        .iti-flag.mh {
+            background-position: -16px -88px;
+        }
+        
+        .iti-flag.mk {
+            background-position: -32px -88px;
+        }
+        
+        .iti-flag.ml {
+            background-position: -48px -88px;
+        }
+        
+        .iti-flag.mm {
+            background-position: -64px -88px;
+        }
+        
+        .iti-flag.mn {
+            background-position: -80px -88px;
+        }
+        
+        .iti-flag.mo {
+            background-position: -96px -88px;
+        }
+        
+        .iti-flag.mp {
+            background-position: -112px -88px;
+        }
+        
+        .iti-flag.mq {
+            background-position: -128px -88px;
+        }
+        
+        .iti-flag.mr {
+            background-position: -144px -88px;
+        }
+        
+        .iti-flag.ms {
+            background-position: -160px -88px;
+        }
+        
+        .iti-flag.mt {
+            background-position: -176px -88px;
+        }
+        
+        .iti-flag.mu {
+            background-position: -192px -88px;
+        }
+        
+        .iti-flag.mv {
+            background-position: -208px -88px;
+        }
+        
+        .iti-flag.mw {
+            background-position: -224px -88px;
+        }
+        
+        .iti-flag.mx {
+            background-position: -240px -88px;
+        }
+        
+        .iti-flag.my {
+            background-position: 0 -99px;
+        }
+        
+        .iti-flag.mz {
+            background-position: -16px -99px;
+        }
+        
+        .iti-flag.na {
+            background-position: -32px -99px;
+        }
+        
+        .iti-flag.nc {
+            background-position: -48px -99px;
+        }
+        
+        .iti-flag.ne {
+            background-position: -64px -99px;
+        }
+        
+        .iti-flag.nf {
+            background-position: -80px -99px;
+        }
+        
+        .iti-flag.ng {
+            background-position: -96px -99px;
+        }
+        
+        .iti-flag.ni {
+            background-position: -112px -99px;
+        }
+        
+        .iti-flag.nl,
+        .iti-flag.bq {
+            background-position: -128px -99px;
+        }
+        
+        .iti-flag.no {
+            background-position: -144px -99px;
+        }
+        
+        .iti-flag.np {
+            background-position: -160px -99px;
+        }
+        
+        .iti-flag.nr {
+            background-position: -176px -99px;
+        }
+        
+        .iti-flag.nu {
+            background-position: -192px -99px;
+        }
+        
+        .iti-flag.nz {
+            background-position: -208px -99px;
+        }
+        
+        .iti-flag.om {
+            background-position: -224px -99px;
+        }
+        
+        .iti-flag.pa {
+            background-position: -240px -99px;
+        }
+        
+        .iti-flag.pe {
+            background-position: 0 -110px;
+        }
+        
+        .iti-flag.pf {
+            background-position: -16px -110px;
+        }
+        
+        .iti-flag.pg {
+            background-position: -32px -110px;
+        }
+        
+        .iti-flag.ph {
+            background-position: -48px -110px;
+        }
+        
+        .iti-flag.pk {
+            background-position: -64px -110px;
+        }
+        
+        .iti-flag.pl {
+            background-position: -80px -110px;
+        }
+        
+        .iti-flag.pm {
+            background-position: -96px -110px;
+        }
+        
+        .iti-flag.pr {
+            background-position: -112px -110px;
+        }
+        
+        .iti-flag.ps {
+            background-position: -128px -110px;
+        }
+        
+        .iti-flag.pt {
+            background-position: -144px -110px;
+        }
+        
+        .iti-flag.pw {
+            background-position: -160px -110px;
+        }
+        
+        .iti-flag.py {
+            background-position: -176px -110px;
+        }
+        
+        .iti-flag.qa {
+            background-position: -192px -110px;
+        }
+        
+        .iti-flag.re {
+            background-position: -208px -110px;
+        }
+        
+        .iti-flag.ro {
+            background-position: -224px -110px;
+        }
+        
+        .iti-flag.rs {
+            background-position: -240px -110px;
+        }
+        
+        .iti-flag.ru {
+            background-position: 0 -121px;
+        }
+        
+        .iti-flag.rw {
+            background-position: -16px -121px;
+        }
+        
+        .iti-flag.sa {
+            background-position: -32px -121px;
+        }
+        
+        .iti-flag.sb {
+            background-position: -48px -121px;
+        }
+        
+        .iti-flag.sc {
+            background-position: -64px -121px;
+        }
+        
+        .iti-flag.sd {
+            background-position: -80px -121px;
+        }
+        
+        .iti-flag.se {
+            background-position: -96px -121px;
+        }
+        
+        .iti-flag.sg {
+            background-position: -112px -121px;
+        }
+        
+        .iti-flag.sh {
+            background-position: -128px -121px;
+        }
+        
+        .iti-flag.si {
+            background-position: -144px -121px;
+        }
+        
+        .iti-flag.sk {
+            background-position: -160px -121px;
+        }
+        
+        .iti-flag.sl {
+            background-position: -176px -121px;
+        }
+        
+        .iti-flag.sm {
+            background-position: -192px -121px;
+        }
+        
+        .iti-flag.sn {
+            background-position: -208px -121px;
+        }
+        
+        .iti-flag.so {
+            background-position: -224px -121px;
+        }
+        
+        .iti-flag.sr {
+            background-position: -240px -121px;
+        }
+        
+        .iti-flag.ss {
+            background-position: 0 -132px;
+        }
+        
+        .iti-flag.st {
+            background-position: -16px -132px;
+        }
+        
+        .iti-flag.sv {
+            background-position: -32px -132px;
+        }
+        
+        .iti-flag.sx {
+            background-position: -48px -132px;
+        }
+        
+        .iti-flag.sy {
+            background-position: -64px -132px;
+        }
+        
+        .iti-flag.sz {
+            background-position: -80px -132px;
+        }
+        
+        .iti-flag.tc {
+            background-position: -96px -132px;
+        }
+        
+        .iti-flag.td {
+            background-position: -112px -132px;
+        }
+        
+        .iti-flag.tg {
+            background-position: -128px -132px;
+        }
+        
+        .iti-flag.th {
+            background-position: -144px -132px;
+        }
+        
+        .iti-flag.tj {
+            background-position: -160px -132px;
+        }
+        
+        .iti-flag.tk {
+            background-position: -176px -132px;
+        }
+        
+        .iti-flag.tl {
+            background-position: -192px -132px;
+        }
+        
+        .iti-flag.tm {
+            background-position: -208px -132px;
+        }
+        
+        .iti-flag.tn {
+            background-position: -224px -132px;
+        }
+        
+        .iti-flag.to {
+            background-position: -240px -132px;
+        }
+        
+        .iti-flag.tr {
+            background-position: 0 -143px;
+        }
+        
+        .iti-flag.tt {
+            background-position: -16px -143px;
+        }
+        
+        .iti-flag.tv {
+            background-position: -32px -143px;
+        }
+        
+        .iti-flag.tw {
+            background-position: -48px -143px;
+        }
+        
+        .iti-flag.tz {
+            background-position: -64px -143px;
+        }
+        
+        .iti-flag.ua {
+            background-position: -80px -143px;
+        }
+        
+        .iti-flag.ug {
+            background-position: -96px -143px;
+        }
+        
+        .iti-flag.us {
+            background-position: -112px -143px;
+        }
+        
+        .iti-flag.uy {
+            background-position: -128px -143px;
+        }
+        
+        .iti-flag.uz {
+            background-position: -144px -143px;
+        }
+        
+        .iti-flag.va {
+            background-position: -160px -143px;
+        }
+        
+        .iti-flag.vc {
+            background-position: -176px -143px;
+        }
+        
+        .iti-flag.ve {
+            background-position: -192px -143px;
+        }
+        
+        .iti-flag.vg {
+            background-position: -208px -143px;
+        }
+        
+        .iti-flag.vi {
+            background-position: -224px -143px;
+        }
+        
+        .iti-flag.vn {
+            background-position: -240px -143px;
+        }
+        
+        .iti-flag.vu {
+            background-position: 0 -154px;
+        }
+        
+        .iti-flag.wf {
+            background-position: -16px -154px;
+        }
+        
+        .iti-flag.ws {
+            background-position: -32px -154px;
+        }
+        
+        .iti-flag.ye {
+            background-position: -48px -154px;
+        }
+        
+        .iti-flag.za {
+            background-position: -64px -154px;
+        }
+        
+        .iti-flag.zm {
+            background-position: -80px -154px;
+        }
+        
+        .iti-flag.zw {
+            background-position: -96px -154px;
+        }
+        
+        .intl-tel-input {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .intl-tel-input * {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+        
+        .intl-tel-input .hide {
+            display: none;
+        }
+        
+        .intl-tel-input .v-hide {
+            visibility: hidden;
+        }
+        
+        .intl-tel-input input,
+        .intl-tel-input input[type=text],
+        .intl-tel-input input[type=tel] {
+            position: relative;
+            z-index: 0;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding-left: 44px;
+            margin-left: 0;
+            transition: background-color 100ms ease-out;
+        }
+        
+        .intl-tel-input input.iti-invalid-key {
+            transition: background-color 0;
+            background-color: #ffc7c7;
+        }
+        
+        .intl-tel-input .flag-dropdown {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            padding: 1px;
+        }
+        
+        .intl-tel-input .flag-dropdown:hover {
+            cursor: pointer;
+        }
+        
+        .intl-tel-input .flag-dropdown:hover .selected-flag {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .intl-tel-input input[disabled]+.flag-dropdown:hover,
+        .intl-tel-input input[readonly]+.flag-dropdown:hover {
+            cursor: default;
+        }
+        
+        .intl-tel-input input[disabled]+.flag-dropdown:hover .selected-flag,
+        .intl-tel-input input[readonly]+.flag-dropdown:hover .selected-flag {
+            background-color: transparent;
+        }
+        
+        .intl-tel-input .selected-flag {
+            z-index: 1;
+            position: relative;
+            width: 38px;
+            height: 100%;
+            padding: 0 0 0 8px;
+        }
+        
+        .intl-tel-input .selected-flag .iti-flag {
+            position: absolute;
+            top: 50%;
+            margin-top: -5px;
+        }
+        
+        .intl-tel-input .selected-flag .arrow {
+            position: relative;
+            top: 50%;
+            margin-top: -2px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 3px solid transparent;
+            border-right: 3px solid transparent;
+            border-top: 4px solid #555;
+        }
+        
+        .intl-tel-input .selected-flag .arrow.up {
+            border-top: none;
+            border-bottom: 4px solid #555;
+        }
+        
+        .intl-tel-input .country-list {
+            list-style: none;
+            position: absolute;
+            z-index: 2;
+            padding: 0;
+            margin: 0 0 0 -1px;
+            box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 430px;
+            max-height: 200px;
+            overflow-y: scroll;
+        }
+        
+        .intl-tel-input .country-list .iti-flag {
+            display: inline-block;
+        }
+        
+        .intl-tel-input .country-list .divider {
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .intl-tel-input .country-list .country {
+            padding: 5px 10px;
+        }
+        
+        .intl-tel-input .country-list .country .dial-code {
+            color: #999;
+        }
+        
+        .intl-tel-input .country-list .country.highlight {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+        
+        .intl-tel-input .country-list .iti-flag,
+        .intl-tel-input .country-list .country-name {
+            margin-right: 6px;
+        }
+        
+        .iti-flag {
+            background-image: url("http://jackocnr.com/assets/flags-grey.png");
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:transparent;border-bottom-color:transparent;position: unset;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+<!--                <a class="navbar-brand" href="/" style="width:100%"></a>-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <p id="heading">User Management</p>
+                <input type="button" id="Logout" value="Logout" style="float:right;margin-top:-4%" class="button" onclick="location.href='/logout'" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Manage <b>Users</b></h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="min-height:100%;width:100%">
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <div class="alert alert-success alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><strong>×</strong></span></button>
+                    <strong>{{message}}</strong>
+                </div>
+                {% endfor %} {% endif %} {% endwith %} {% block body %}{% endblock %}
+            </div>
+            <script>
+                $(".alert").delay(4000).slideUp(200, function() {
+                    $(this).alert('close');
+                });
+            </script>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+
+                        <!--<th>Role</th>-->
+                        <th>Permissions</th>
+                        <th>Branch</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% for i in range(cp) %}
+                        <tr>
+                            <td id="bd">{{u[i]}}</td>
+                            <td>{{u2[i]}}</td>
+                            <td>{{u1[i]}}</td>
+                            <td>{{u3[i]}}</td>
+                            <td>{{dl[i]}}</td>
+                            <td>
+                                <button class="btn btn-success" data-toggle="modal" data-target="#editModal" contenteditable="false">Edit</button>
+                            </td>
+                            <td><button class="btn btn-danger" data-toggle="modal" data-target="#deleteEmployeeModal">Delete</button></td>
+                            <td><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#passModal">
+                          <span class="glyphicon glyphicon-cog"></span> Change password</button></td>
+                        </tr>
+                        {% endfor %}
+                </tbody>
+            </table>
+            <!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-dismiss="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true" class="">×   </span><span class="sr-only">Close</span>
+
+                </button>
+                 <h4 class="modal-title" id="myModalLabel">Edit User</h4>
+
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>-->
+
+            <script>
+                $(".btn[data-target='#editModal']").click(function() {
+                    var columnHeadings = $("thead th").map(function() {
+                        return $(this).text();
+                    }).get();
+                    columnHeadings.pop();
+                    var columnValues = $(this).parent().siblings().map(function() {
+                        return $(this).text();
+                    }).get();
+                    columnValues.pop();
+                    var modalBody = $('<div id="modalContent"></div>');
+                    var modalForm = $('<form role="form" name="modalForm" action="/updateuser" method="post"></form>');
+                    $.each(columnHeadings, function(i, columnHeader) {
+                        var formGroup = $('<div class="form-group"></div>');
+                        console.log("hii");
+                        if (columnHeader == "Permissions") {
+                            // if (columnValues[i] == "AgentsApp") {
+                            //     formGroup.append('<h4>Application</h4><label><input type="radio" name="colorRadio" checked="checked" value="AgentsApp"> Agents App</label><br><label><input type="radio" name="colorRadio" value="CM"> CM</label><br><label><input type="radio" name="colorRadio" value="CC"> CC</label><br><label><input type="radio" name="colorRadio" value="Agent Manager"> Agent Manager</label><br>');
+                            //     modalForm.append(formGroup);
+                            // } else if (columnValues[i] == "CM") {
+                            //     formGroup.append('<h4>Application</h4><label><input type="radio" name="colorRadio" value="AgentsApp"> Agents App</label><br><label><input type="radio" name="colorRadio" checked="checked" value="CM"> CM</label><br><label><input type="radio" name="colorRadio" value="CC"> CC</label><br><label><input type="radio" name="colorRadio" value="Agent Manager"> Agent Manager</label><br>');
+                            //     modalForm.append(formGroup);
+                            // } else if (columnValues[i] == "CC") {
+                            //     formGroup.append('<h4>Application</h4><label><input type="radio" name="colorRadio" value="AgentsApp"> Agents App</label><br><label><input type="radio" name="colorRadio" value="CM"> CM</label><br><label><input type="radio" name="colorRadio" checked="checked"  value="CC"> CC</label><br><label><input type="radio" name="colorRadio" value="Agent Manager"> Agent Manager</label><br>');
+                            //     modalForm.append(formGroup);
+                            // } else if (columnValues[i] == "Agent Manager") {
+                            //     formGroup.append('<h4>Application</h4><label><input type="radio" name="colorRadio" value="AgentsApp"> Agents App</label><br><label><input type="radio" name="colorRadio" value="CM"> CM</label><br><label><input type="radio" name="colorRadio" value="CC"> CC</label><br><label><input type="radio" name="colorRadio" checked="checked"  value="Agent Manager"> Agent Manager</label><br>');
+                            //     modalForm.append(formGroup);
+                            // }
+                            //formGroup.append('<label for="exampleFormControlSelect1">Branch</label><select class="form-control" name="branch" id="branch" id="exampleFormControlSelect1"><option>B1</option><option>B2</option></select>');
+                            formGroup.append('<h4>Application</h4>');
+                            modalForm.append(formGroup);
+                            var all_permsissions = ["QI", "QRU", "QRM", "QRP", "DF", "DR", "ARRP"]
+                            var labels_for_permissions = ["Create and Edit quote", "Quote Review", "Quote Review Referrals", "Quote Reporting", "Record Follow up", "Policy cover reduce", "Reports download"];
+                            var permissions_tab = columnValues[i];
+                            for (i = 0; i < all_permsissions.length; i++) {
+                                if (permissions_tab.includes(all_permsissions[i])) {
+                                    formGroup.append('<label><input type="checkbox" checked name="' + all_permsissions[i] + '">' + labels_for_permissions[i] + '</label>');
+                                    modalForm.append(formGroup);
+                                } else {
+                                    formGroup.append('<label><input type="checkbox" name="' + all_permsissions[i] + '">' + labels_for_permissions[i] + '</label>');
+                                    modalForm.append(formGroup);
+                                }
+                            }
+
+
+                        }
+                        else if(columnHeader == "Status"){
+                        formGroup.append('<h4>Status</h4>');
+                             if (columnValues[i] == "Active") {
+                                 formGroup.append('<h4Status</h4><label><input type="radio" name="colorRadio" checked="checked" id="act" value="Active"> Active</label><label><input type="radio" name="colorRadio" id="inact" value="Inactive"> Inactive</label>');
+                                 modalForm.append(formGroup);
+                             } else if (columnValues[i] == "Inactive") {
+                                formGroup.append('<h4Status</h4><label><input type="radio" name="colorRadio" id="act" value="Active"> Active</label><label><input type="radio" name="colorRadio" checked="checked" id="inact" value="Inactive"> Inactive</label>');
+                                //formGroup.append('<h4>Application</h4><label><input type="radio" name="colorRadio" value="AgentsApp"> Agents App</label><br><label><input type="radio" name="colorRadio" checked="checked" value="CM"> CM</label><br><label><input type="radio" name="colorRadio" value="CC"> CC</label><br><label><input type="radio" name="colorRadio" value="Agent Manager"> Agent Manager</label><br>');
+                                 modalForm.append(formGroup);
+                             }
+                        }
+                        else if(columnHeader == "Branch"){
+                        formGroup.append('<h4>Branch</h4>');
+                        if(columnValues[i] == "Exuma NUA 2"){
+                        formGroup.append('<select class="form-control" name="branch" id="branch"><option value="Exuma NUA 2" selected>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                        modalForm.append(formGroup);
+                        }
+                        else if(columnValues[i] == "Exuma"){
+                        formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option value="Exuma" selected>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                        modalForm.append(formGroup);
+                        }
+                        else if(columnValues[i] == "Marathon Mall"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option value="Marathon Mall" selected>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Abaco"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option value="Abaco" selected>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Head Office - Cayman"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option value="Head Office - Cayman" selected>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Turks and Caicos (Acordia)"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option value="Turks and Caicos (Acordia)" selected>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Exuma-NUA"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option value="Exuma-NUA" selected>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Freeport"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option value="Freeport" selected>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Turks and Caicos (Fidelity)"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option value="Turks and Caicos (Fidelity)" selected>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Thompson Boulevard"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option value="Thompson Boulevard" selected>Thompson Boulevard</option><option>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Turks and Caicos"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option value="Turks and Caicos" selected>Turks and Caicos</option><option>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+                        else if(columnValues[i] == "Head Office"){
+                                                formGroup.append('<select class="form-control" name="branch" id="branch"><option>Exuma NUA 2</option><option>Exuma</option>option><option>Marathon Mall</option><option>Abaco</option><option>Head Office - Cayman</option><option>Turks and Caicos (Acordia)</option><option>Exuma-NUA</option><option>Freeport</option><option>Turks and Caicos (Fidelity)</option><option>Thompson Boulevard</option><option>Turks and Caicos</option><option value="Head Office" selected>Head Office</option></select>');
+                                                modalForm.append(formGroup);
+                                                }
+
+
+
+                        }
+
+                        else if (columnHeader == "Email") {
+                            formGroup.append('<label for="' + columnHeader + '">' + columnHeader + '</label>');
+                            formGroup.append('<input class="form-control" name="' + columnHeader + '" id="' + columnHeader + i + '" value="' + columnValues[i] + '" readonly autocomplete="on">');
+                        } else {
+                            formGroup.append('<label for="' + columnHeader + '">' + columnHeader + '</label>');
+                            formGroup.append('<input class="form-control" name="' + columnHeader + '" id="' + columnHeader + i + '" value="' + columnValues[i] + '" autocomplete="on">');
+                        }
+                        modalForm.append(formGroup);
+
+                    });
+                    modalForm.append('<div class="modal-footer"><input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"><input type="submit" class="btn btn-success" value="Update"></div>')
+                    modalBody.append(modalForm);
+
+                    $('.modal-body').html(modalBody);
+                });
+            </script>
+            <script>
+               
+        </script>
+        </div>
+    </div>
+    <div id="deleteEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/deluser" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete User</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".btn[data-target='#deleteEmployeeModal']").click(function() {
+            var columnHeadings = $("thead th").map(function() {
+                return $(this).text();
+            }).get();
+            columnHeadings.pop();
+            var columnValues = $(this).parent().siblings().map(function() {
+                return $(this).text();
+            }).get();
+            columnValues.pop();
+            var modalBody = $('<div id="modalContent"></div>');
+            var modalForm = $('<form role="form" name="modalForm" action="/deluser" method="post"></form>');
+            $.each(columnHeadings, function(i, columnHeader) {
+                var formGroup = $('<div class="form-group"></div>');
+                console.log("hii");
+
+                if (columnHeader == "Email") {
+                    formGroup.append('<label for="' + columnHeader + '">' + columnHeader + '</label>');
+                    formGroup.append('<input class="form-control" name="' + columnHeader + '" id="' + columnHeader + i + '" value="' + columnValues[i] + '" autocomplete="on" readonly>');
+                }
+                modalForm.append(formGroup);
+            });
+            modalForm.append('<p>Are you sure you want to delete these Records?</p><p class="text-warning"><small>This action cannot be undone.</small></p><div class="modal-footer"><input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"><input type="submit" class="btn btn-success" value="Delete"></div>')
+            modalBody.append(modalForm);
+
+            $('.modal-body').html(modalBody);
+        });
+    </script>
+    <script>
+        function checkphone() {
+            var phon = $("#pno1").val();
+            console.log(phon);
+            if (phon != null && phon != '') {
+                if (!phon.includes("+")) {
+                    $('#phon_status').html("PLease include the country code");
+                    $('#addUser').attr("disabled", true);
+                } else {
+
+                    $('#phon_status').html("You are good to go");
+                }
+            }
+        }
+
+        function checkemail() {
+            var emai = $("#email1").val();
+            console.log(emai);
+
+            if (emai != '' && emai != null) {
+                $.ajax({
+                    url: '/emailval',
+                    type: 'post',
+                    data: $('#email1').serialize(),
+                    success: function(response) {
+                        /*obj = JSON.parse(response)*/
+                        $('#email_status').html(response);
+                        if (response == "OK") {
+                            $('#email_status').html("You are good to go");
+                            $('#password').attr("disabled", false);
+
+                        } else {
+                            $('#email_status').html(response);
+                            $('#addUser').attr("disabled", true);
+                            $('#password').attr("disabled", true);
+                        }
+                    }
+                });
+            } else {
+                $('#email_status').html("Email can't be empty");
+                $('#addUser').attr("disabled", true);
+                return false;
+            }
+        }
+    </script>
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/createuser" method="POST" id="create">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add User</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="Name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" id="email1" onblur="checkemail()" required><span id="email_status"></span>
+                        </div>
+                        <div class="form-group">
+                             <label for="exampleFormControlSelect1">Branch</label>
+    <select class="form-control" name="branch" id="branch" id="exampleFormControlSelect1">
+     <option value="Exuma NUA 2">Exuma NUA 2</option>
+        <option value="Exuma">Exuma</option>option>
+        <option value="Marathon Mall">Marathon Mall</option>
+        <option value="Abaco">Abaco</option>
+        <option values="Head Office - Cayman">Head Office - Cayman</option>
+        <option values="Turks and Caicos (Acordia)">Turks and Caicos (Acordia)</option>
+        <option values= "Exuma-NUA">Exuma-NUA</option>
+        <option values="Freeport">Freeport</option>
+        <option values= "Turks and Caicos (Fidelity)">Turks and Caicos (Fidelity)</option>
+        <option values= "Thompson Boulevard">Thompson Boulevard</option>
+        <option values= "Turks and Caicos">Turks and Caicos</option>
+        <option values= "Head Office">Head Office</option>
+
+    </select>
+                        </div>
+                        <div class="form-group">
+                            <div class="passcontainer">
+                                <div class="passrow">
+                                    <div class="passleft">
+                                        Password: &nbsp;
+                                    </div>
+                                    <div class="passright">
+
+                                        <input id="password" type="password" name="Password" disabled="disabled" required>
+                                    </div>
+                                </div>
+
+                                <div class="passrow2">
+                                    <div class="strength">
+                                        <div id="weaks"></div>
+                                        <div id="meds"></div>
+                                        <div id="strongs"></div>
+                                    </div>
+                                    <div class="passleft">
+                                        <div id="passstatus"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="passrow">
+                                    <div class="passleft">
+                                        Confirm Password: &nbsp;
+                                    </div>
+                                    <div class="passright">
+                                        <input id="confirmpassword" type="password">
+                                    </div>
+
+                                    <div class="passrow">
+                                        <div class="passleft">
+                                            <div id="weak">Weak</div>
+                                            <div id="medium"> Medium</div>
+                                            <div id="strong"> Passwords Match!</div>
+
+                                        </div>
+                                        <div class="passright">
+                                            <i class="far fa-frown" id="frown"></i>
+                                            <i class="far fa-meh" id="meh"></i>
+                                            <i class="far fa-smile" id="smile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="passrow3">
+                                        <hr>
+                                        <ul>
+                                            <li>  Password must contain at least 1 lowercase alphabetical character,1 uppercase alphabetical character,1 numeric character and minimum length is 6 characters <br>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <h4>Permissions</h4>
+                            <!-- <div>
+                                <label><input type="radio" name="colorRadio" checked="checked" value="AgentsApp"> Agents App</label><br>
+                                <label><input type="radio" name="colorRadio" value="CM"> CM</label><br>
+                                <label><input type="radio" name="colorRadio" value="CC"> CC</label><br>
+                                <label><input type="radio" name="colorRadio" value="Agent Manager"> Agent Manager</label><br>
+                            </div> -->
+                            <div>
+                                <label><input type="checkbox" name="QI">Create and Edit quote</label>
+                                <label><input type="checkbox" name="QRU">Quote Review</label>
+                                <label><input type="checkbox" name="QRM">Quote Review Referrals</label>
+                                <label><input type="checkbox" name="QRP">Quote Reporting</label>
+                                <label><input type="checkbox" name="DF">Record Follow up</label>
+                                <label><input type="checkbox" name="DR">Policy cover reduce</label>
+                                <label><input type="checkbox" name="ARRP">Reports download</label>
+
+
+
+                            </div>
+                            <!-- <input type="radio" name="colorRadio1" checked="checked" value="SuperUser" style="display:none;">
+                            <input type="radio" name="colorRadio1" value="User" style="display:none;"> -->
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" onclick="" value="Add" id="addUser" disabled="disabled">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="editModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/updateuser" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit User</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#editModal').on('hidden.bs.modal', function() {
+            location.reload();
+        });
+        $('#addEmployeeModal').on('hidden.bs.modal', function() {
+            location.reload();
+        });
+        $('#deleteEmployeeModal').on('hidden.bs.modal', function() {
+            location.reload();
+        });
+
+        $('#passModal').on('hidden.bs.modal', function() {
+            location.reload();
+        });
+    </script>
+    <script>
+        $('#create').submit(function() {
+            $('#output').show();
+
+        });
+    </script>
+    <script>
+        $(function e() {
+
+            var meh = $("#meh1");
+            var smile = $("#smile1");
+            var frown = $("#frown1");
+            var weak = $("#weak1");
+            var medium = $("#medium1");
+            var strong = $("#strong1");
+            var pass = $("#password1");
+            var confirm = $("#confirmpassword1");
+            var emojimess = $("#meh1, #smile1, #frown1, #weak1, #medium1, #strong1");
+            var status = $("#passstatus1");
+            var weaks = $("#weaks1");
+            var meds = $("#meds1");
+            var strongs = $("#strongs1");
+            var button = $("#submit1");
+            var container = $(".passcontainer1");
+            var reset = $("#reset1");
+
+
+            emojimess.hide();
+            confirm.attr("disabled", true);
+            button.hide();
+            reset.hide();
+
+            pass.keyup(function() {
+                var strongRegex = new RegExp("^(?=.*[a-z]{3,})(?=.*[A-Z]{3,})(?=.*[0-9]{3,})(?=.*[!@#\$%\^&\*]{3,})(?=.{12,})");
+                var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})");
+
+                if (strongRegex.test(pass.val())) {
+                    status.html("Strong password!");
+                    strongs.css("background", "green");
+                    confirm.attr("disabled", false);
+                    if (pass.val() == confirm.val()) {
+                        button.fadeIn();
+                    } else {
+                        button.hide();
+                    }
+
+                } else if (mediumRegex.test(pass.val())) {
+                    status.html("Medium-strength password");
+                    meds.css("background", "orange");
+                    strongs.css("background", "none");
+                    confirm.attr("disabled", true);
+                    button.css("display", "none");
+
+                } else {
+                    status.html("Weak");
+                    meds.css("background", "none");
+                    strongs.css("background", "none");
+                    weaks.css("background", "red");
+                    confirm.attr("disabled", true);
+                    button.css("display", "none");
+                }
+
+                if (pass.val() == 0) {
+                    status.html('');
+                    weaks.css("background", "none");
+                    meds.css("background", "none");
+                    strongs.css("background", "none");
+                    confirm.attr("disabled", true);
+
+                }
+                if (confirm.val() != "") {
+                    if (pass.val() == confirm.val()) {
+                        button.fadeOut();
+                        reset.fadeOut();
+                        strong.fadeOut();
+
+                    }
+                }
+            })
+
+            confirm.keyup(function() {
+                if (pass.val() == confirm.val()) {
+                    pass.css("border", "2px solid green");
+                    confirm.css("border", "2px solid green");
+                    button.fadeIn();
+                    $(".passrow3").fadeOut();
+                    smile.fadeIn();
+                    strong.fadeIn();
+                    reset.fadeIn();
+
+
+
+                } else {
+
+                    confirm.css("border", "2px solid red");
+                    button.fadeOut();
+                }
+            })
+            reset.click(function() {
+                pass.val('');
+                confirm.val('');
+                emojimess.hide();
+                status.html('');
+                weaks.css("background", "none");
+                meds.css("background", "none");
+                strongs.css("background", "none");
+                confirm.attr("disabled", true);
+                reset.hide();
+                button.hide();
+                $(".passrow3").fadeIn();
+                pass.css("border", "1px solid #b5b5b5");
+                confirm.css("border", "1px solid #b5b5b5");
+            })
+
+
+
+
+
+        })
+    </script>
+    <div id="passModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="/pasuser" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Change Password</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="passy">
+
+                        </div>
+                        <br>
+                        <div>
+                            <div class="passcontainer1">
+                                <div class="passrow1">
+                                    <div class="passleft1">
+                                        Password: &nbsp;
+                                    </div>
+                                    <div class="passright1">
+
+                                        <input id="password1" type="password" name="Password1">
+                                    </div>
+                                </div>
+
+                                <div class="passrow21">
+                                    <div class="strength1">
+                                        <div id="weaks1"></div>
+                                        <div id="meds1"></div>
+                                        <div id="strongs1"></div>
+                                    </div>
+                                    <div class="passleft1">
+                                        <div id="passstatus1"></div>
+                                    </div>
+                                </div>
+
+
+                                <div class="passrow1">
+                                    <div class="passleft1">
+                                        Confirm Password: &nbsp;
+                                    </div>
+                                    <div class="passright1">
+                                        <input id="confirmpassword1" type="password">
+                                    </div>
+
+                                    <div class="passrow1">
+                                        <div class="passleft1">
+                                            <div id="weak1">Weak</div>
+                                            <div id="medium1"> Medium</div>
+                                            <div id="strong1"> Passwords Match!</div>
+
+                                        </div>
+                                        <div class="passright1">
+                                            <i class="far fa-frown" id="frown1"></i>
+                                            <i class="far fa-meh" id="meh1"></i>
+                                            <i class="far fa-smile" id="smile1"></i>
+                                        </div>
+                                    </div>
+                                    <div class="passrow1"><input type="submit" id="submit1" value="Save" /><input type="button" id="reset1" value="Reset" /></div>
+                                    <div class="passrow31">
+                                        <hr>
+                                        <ul>
+                                            <li>Password must contain at least 1 lowercase alphabetical character,1 uppercase alphabetical character,1 numeric character and minimum length is 6 characters<br></ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(".btn[data-target='#passModal']").click(function() {
+            var columnHeadings = $("thead th").map(function() {
+                return $(this).text();
+            }).get();
+            columnHeadings.pop();
+            var columnValues = $(this).parent().siblings().map(function() {
+                return $(this).text();
+            }).get();
+            columnValues.pop();
+            var modalBody = $('<div id="modalContent"></div>');
+            $.each(columnHeadings, function(i, columnHeader) {
+                console.log("hi pass");
+
+                if (columnHeader == "Email") {
+                    console.log('ifema');
+                    modalBody.append('<label for="' + columnHeader + '">' + columnHeader + '</label>');
+                    modalBody.append('<input class="form-control" name="' + columnHeader + '" id="' + columnHeader + i + '" value="' + columnValues[i] + '" autocomplete="on" readonly>');
+                }
+
+            });
+
+
+            $('#passy').html(modalBody);
+        });
+    </script>
+    <script>
+        $(function ValidateForms() {
+
+            var meh = $("#meh");
+            var smile = $("#smile");
+            var frown = $("#frown");
+            var weak = $("#weak");
+            var medium = $("#medium");
+            var strong = $("#strong");
+            var pass = $("#password");
+            var confirm = $("#confirmpassword");
+            var emojimess = $("#meh, #smile, #frown, #weak, #medium, #strong");
+            var status = $("#passstatus");
+            var weaks = $("#weaks");
+            var meds = $("#meds");
+            var strongs = $("#strongs");
+            var button = $("#submit");
+            var container = $(".passcontainer");
+            var reset = $("#reset");
+            var adduser = $("#addUser");
+
+            emojimess.hide();
+            confirm.attr("disabled", true);
+            button.hide();
+            reset.hide();
+
+            pass.keyup(function() {
+                var strongRegex = new RegExp("^(?=.*[a-z]{1,})(?=.*[A-Z]{1,})(?=.*[0-9]{1,})(?=.{6,})");
+                var mediumRegex = new RegExp("^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{5,})");
+
+                if (strongRegex.test(pass.val())) {
+                    status.html("Strong password!");
+                    strongs.css("background", "green");
+                    confirm.attr("disabled", false);
+                    if (pass.val() == confirm.val()) {
+                        adduser.attr("disabled", false);
+                    } else {
+                        adduser.attr("disabled", true);
+                    }
+
+
+
+
+                } else if (mediumRegex.test(pass.val())) {
+                    status.html("Medium-strength password");
+                    meds.css("background", "orange");
+                    strongs.css("background", "none");
+                    confirm.attr("disabled", true);
+                    adduser.attr("disabled", true);
+
+                } else {
+                    status.html("Weak");
+                    meds.css("background", "none");
+                    strongs.css("background", "none");
+                    weaks.css("background", "red");
+                    confirm.attr("disabled", true);
+                    adduser.attr("disabled", true);
+                }
+
+                if (pass.val() == 0) {
+                    status.html('');
+                    weaks.css("background", "none");
+                    meds.css("background", "none");
+                    strongs.css("background", "none");
+                    confirm.attr("disabled", true);
+                    adduser.attr("disabled", true);
+
+                }
+            })
+
+            confirm.keyup(function() {
+                if (pass.val() == confirm.val()) {
+                    pass.css("border", "2px solid green");
+                    confirm.css("border", "2px solid green");
+                    button.fadeIn();
+                    $(".passrow3").fadeOut();
+                    smile.fadeIn();
+                    strong.fadeIn();
+                    reset.fadeIn();
+                    adduser.attr("disabled", false);
+
+                } else {
+                    adduser.attr("disabled", true);
+                    confirm.css("border", "2px solid red");
+                    button.fadeOut();
+                }
+            })
+
+
+
+
+
+
+        })
+    </script>
+    <script>
+        /*
+                                                                                                                                                                International Telephone Input v4.0.1
+                                                                                                                                                                https://github.com/Bluefieldscom/intl-tel-input.git
+                                                                                                                                                                */
+        // wrap in UMD - see https://github.com/umdjs/umd/blob/master/jqueryPlugin.js
+        (function(factory) {
+            if (typeof define === "function" && define.amd) {
+                define(["jquery"], function($) {
+                    factory($, window, document);
+                });
+            } else {
+                factory(jQuery, window, document);
+            }
+        })(function($, window, document, undefined) {
+            "use strict";
+            var pluginName = "intlTelInput",
+                id = 1, // give each instance it's own id for namespaced event handling
+                defaults = {
+                    // automatically format the number according to the selected country
+                    autoFormat: true,
+                    // if there is just a dial code in the input: remove it on blur, and re-add it on focus
+                    autoHideDialCode: true,
+                    // default country
+                    defaultCountry: "",
+                    // token for ipinfo - required for https or over 1000 daily page views support
+                    ipinfoToken: "",
+                    // don't insert international dial codes
+                    nationalMode: true,
+                    // number type to use for placeholders
+                    numberType: "MOBILE",
+                    // display only these countries
+                    onlyCountries: [],
+                    // the countries at the top of the list. defaults to united states and united kingdom
+                    preferredCountries: ["us", "gb"],
+                    // stop the user from typing invalid numbers
+                    preventInvalidNumbers: false,
+                    // stop the user from typing invalid dial codes
+                    preventInvalidDialCodes: true,
+                    // specify the path to the libphonenumber script to enable validation/formatting
+                    utilsScript: ""
+                },
+                keys = {
+                    UP: 38,
+                    DOWN: 40,
+                    ENTER: 13,
+                    ESC: 27,
+                    PLUS: 43,
+                    A: 65,
+                    Z: 90,
+                    ZERO: 48,
+                    NINE: 57,
+                    SPACE: 32,
+                    BSPACE: 8,
+                    DEL: 46,
+                    CTRL: 17,
+                    CMD1: 91,
+                    // Chrome
+                    CMD2: 224
+                },
+                windowLoaded = false;
+            // keep track of if the window.load event has fired as impossible to check after the fact
+            $(window).load(function() {
+                windowLoaded = true;
+            });
+
+            function Plugin(element, options) {
+                this.element = element;
+                this.options = $.extend({}, defaults, options);
+                this._defaults = defaults;
+                // event namespace
+                this.ns = "." + pluginName + id++;
+                // Chrome, FF, Safari, IE9+
+                this.isGoodBrowser = Boolean(element.setSelectionRange);
+                this.hadInitialPlaceholder = Boolean($(element).attr("placeholder"));
+                this._name = pluginName;
+                this.init();
+            }
+            Plugin.prototype = {
+                init: function() {
+                    var that = this;
+                    // if defaultCountry is set to "auto", we must do a lookup first
+                    if (this.options.defaultCountry == "auto") {
+                        // reset this in case lookup fails
+                        this.options.defaultCountry = "";
+                        var ipinfoURL = "//ipinfo.io";
+                        if (this.options.ipinfoToken) {
+                            ipinfoURL += "?token=" + this.options.ipinfoToken;
+                        }
+                        $.get(ipinfoURL, function(response) {
+                            if (response && response.country) {
+                                that.options.defaultCountry = response.country.toLowerCase();
+                            }
+                        }, "jsonp").always(function() {
+                            that._ready();
+                        });
+                    } else {
+                        this._ready();
+                    }
+                },
+                _ready: function() {
+                    // if in nationalMode, disable options relating to dial codes
+                    if (this.options.nationalMode) {
+                        this.options.autoHideDialCode = false;
+                    }
+                    // IE Mobile doesn't support the keypress event (see issue 68) which makes autoFormat impossible
+                    if (navigator.userAgent.match(/IEMobile/i)) {
+                        this.options.autoFormat = false;
+                    }
+                    // process all the data: onlyCountries, preferredCountries etc
+                    this._processCountryData();
+                    // generate the markup
+                    this._generateMarkup();
+                    // set the initial state of the input value and the selected flag
+                    this._setInitialState();
+                    // start all of the event listeners: autoHideDialCode, input keydown, selectedFlag click
+                    this._initListeners();
+                },
+                /********************
+                 *  PRIVATE METHODS
+                 ********************/
+                // prepare all of the country data, including onlyCountries and preferredCountries options
+                _processCountryData: function() {
+                    // set the instances country data objects
+                    this._setInstanceCountryData();
+                    // set the preferredCountries property
+                    this._setPreferredCountries();
+                },
+                // add a country code to this.countryCodes
+                _addCountryCode: function(iso2, dialCode, priority) {
+                    if (!(dialCode in this.countryCodes)) {
+                        this.countryCodes[dialCode] = [];
+                    }
+                    var index = priority || 0;
+                    this.countryCodes[dialCode][index] = iso2;
+                },
+                // process onlyCountries array if present, and generate the countryCodes map
+                _setInstanceCountryData: function() {
+                    var i;
+                    // process onlyCountries option
+                    if (this.options.onlyCountries.length) {
+                        this.countries = [];
+                        for (i = 0; i < allCountries.length; i++) {
+                            if ($.inArray(allCountries[i].iso2, this.options.onlyCountries) != -1) {
+                                this.countries.push(allCountries[i]);
+                            }
+                        }
+                    } else {
+                        this.countries = allCountries;
+                    }
+                    // generate countryCodes map
+                    this.countryCodes = {};
+                    // and potential country code map
+                    this.pcc = {};
+                    for (i = 0; i < this.countries.length; i++) {
+                        var c = this.countries[i];
+                        this._addCountryCode(c.iso2, c.dialCode, c.priority);
+                        this._addPotentialCountryCode(c.dialCode, this.pcc, 0);
+                        // area codes
+                        if (c.areaCodes) {
+                            for (var j = 0; j < c.areaCodes.length; j++) {
+                                // full dial code is country code + dial code
+                                this._addCountryCode(c.iso2, c.dialCode + c.areaCodes[j]);
+                            }
+                        }
+                    }
+                },
+                // keep a map of potential country codes
+                _addPotentialCountryCode: function(dialCode, map, i) {
+                    var digit = dialCode.charAt(i);
+                    if (!map[digit]) {
+                        map[digit] = dialCode.length == i + 1 ? true : {};
+                    }
+                    if (dialCode.length > i + 1) {
+                        this._addPotentialCountryCode(dialCode, map[digit], i + 1);
+                    }
+                },
+                // process preferred countries - iterate through the preferences,
+                // fetching the country data for each one
+                _setPreferredCountries: function() {
+                    this.preferredCountries = [];
+                    for (var i = 0; i < this.options.preferredCountries.length; i++) {
+                        var countryCode = this.options.preferredCountries[i],
+                            countryData = this._getCountryData(countryCode, false, true);
+                        if (countryData) {
+                            this.preferredCountries.push(countryData);
+                        }
+                    }
+                },
+                // generate all of the markup for the plugin: the selected flag overlay, and the dropdown
+                _generateMarkup: function() {
+                    // telephone input
+                    this.telInput = $(this.element);
+                    // prevent autocomplete as there's no safe, cross-browser event we can react to, so it can easily put the plugin in an inconsistent state e.g. the wrong flag selected for the autocompleted number, which on submit could mean the wrong number is saved (esp in nationalMode)
+                    this.telInput.attr("autocomplete", "off");
+                    // containers (mostly for positioning)
+                    this.telInput.wrap($("<div>", {
+                        "class": "intl-tel-input"
+                    }));
+                    var flagsContainer = $("<div>", {
+                        "class": "flag-dropdown"
+                    }).insertAfter(this.telInput);
+                    // currently selected flag (displayed to left of input)
+                    var selectedFlag = $("<div>", {
+                        "class": "selected-flag"
+                    }).appendTo(flagsContainer);
+                    this.selectedFlagInner = $("<div>", {
+                        "class": "iti-flag"
+                    }).appendTo(selectedFlag);
+                    // CSS triangle
+                    $("<div>", {
+                        "class": "arrow"
+                    }).appendTo(this.selectedFlagInner);
+                    // country list contains: preferred countries, then divider, then all countries
+                    this.countryList = $("<ul>", {
+                        "class": "country-list v-hide"
+                    }).appendTo(flagsContainer);
+                    if (this.preferredCountries.length) {
+                        this._appendListItems(this.preferredCountries, "preferred");
+                        $("<li>", {
+                            "class": "divider"
+                        }).appendTo(this.countryList);
+                    }
+                    this._appendListItems(this.countries, "");
+                    // now we can grab the dropdown height, and hide it properly
+                    this.dropdownHeight = this.countryList.outerHeight();
+                    this.countryList.removeClass("v-hide").addClass("hide");
+                    // on small screens make the dropdown the same width as the input
+                    if (window.innerWidth < 500) {
+                        this.countryList.outerWidth(this.telInput.outerWidth());
+                    }
+                    // this is useful in lots of places
+                    this.countryListItems = this.countryList.children(".country");
+                },
+                // add a country <li> to the countryList <ul> container
+                _appendListItems: function(countries, className) {
+                    // we create so many DOM elements, I decided it was faster to build a temp string
+                    // and then add everything to the DOM in one go at the end
+                    var tmp = "";
+                    // for each country
+                    for (var i = 0; i < countries.length; i++) {
+                        var c = countries[i];
+                        // open the list item
+                        tmp += "<li class='country " + className + "' data-dial-code='" + c.dialCode + "' data-country-code='" + c.iso2 + "'>";
+                        // add the flag
+                        tmp += "<div class='iti-flag " + c.iso2 + "'></div>";
+                        // and the country name and dial code
+                        tmp += "<span class='country-name'>" + c.name + "</span>";
+                        tmp += "<span class='dial-code'>+" + c.dialCode + "</span>";
+                        // close the list item
+                        tmp += "</li>";
+                    }
+                    this.countryList.append(tmp);
+                },
+                // set the initial state of the input value and the selected flag
+                _setInitialState: function() {
+                    var val = this.telInput.val();
+                    // if there is a number, and it's valid, we can go ahead and set the flag, else fall back to default
+                    if (this._getDialCode(val)) {
+                        this._updateFlagFromNumber(val);
+                    } else {
+                        // check the defaultCountry option, else fall back to the first in the list
+                        if (this.options.defaultCountry) {
+                            this.options.defaultCountry = this._getCountryData(this.options.defaultCountry, false, false);
+                        } else {
+                            this.options.defaultCountry = this.preferredCountries.length ? this.preferredCountries[0] : this.countries[0];
+                        }
+                        this._selectFlag(this.options.defaultCountry.iso2);
+                        // if empty, insert the default dial code (this function will check !nationalMode and !autoHideDialCode)
+                        if (!val) {
+                            this._updateDialCode(this.options.defaultCountry.dialCode, false);
+                        }
+                    }
+                    // format
+                    if (val) {
+                        // this wont be run after _updateDialCode as that's only called if no val
+                        this._updateVal(val, false);
+                    }
+                },
+                // initialise the main event listeners: input keyup, and click selected flag
+                _initListeners: function() {
+                    var that = this;
+                    this._initKeyListeners();
+                    // autoFormat prevents the change event from firing, so we need to check for changes between focus and blur in order to manually trigger it
+                    if (this.options.autoHideDialCode || this.options.autoFormat) {
+                        this._initFocusListeners();
+                    }
+                    // hack for input nested inside label: clicking the selected-flag to open the dropdown would then automatically trigger a 2nd click on the input which would close it again
+                    var label = this.telInput.closest("label");
+                    if (label.length) {
+                        label.on("click" + this.ns, function(e) {
+                            // if the dropdown is closed, then focus the input, else ignore the click
+                            if (that.countryList.hasClass("hide")) {
+                                that.telInput.focus();
+                            } else {
+                                e.preventDefault();
+                            }
+                        });
+                    }
+                    // toggle country dropdown on click
+                    var selectedFlag = this.selectedFlagInner.parent();
+                    selectedFlag.on("click" + this.ns, function(e) {
+                        // only intercept this event if we're opening the dropdown
+                        // else let it bubble up to the top ("click-off-to-close" listener)
+                        // we cannot just stopPropagation as it may be needed to close another instance
+                        if (that.countryList.hasClass("hide") && !that.telInput.prop("disabled") && !that.telInput.prop("readonly")) {
+                            that._showDropdown();
+                        }
+                    });
+                    // if the user has specified the path to the utils script, fetch it on window.load
+                    if (this.options.utilsScript) {
+                        // if the plugin is being initialised after the window.load event has already been fired
+                        if (windowLoaded) {
+                            this.loadUtils();
+                        } else {
+                            // wait until the load event so we don't block any other requests e.g. the flags image
+                            $(window).load(function() {
+                                that.loadUtils();
+                            });
+                        }
+                    }
+                },
+                _initKeyListeners: function() {
+                    var that = this;
+                    if (this.options.autoFormat) {
+                        // format number and update flag on keypress
+                        // use keypress event as we want to ignore all input except for a select few keys,
+                        // but we dont want to ignore the navigation keys like the arrows etc.
+                        // NOTE: no point in refactoring this to only bind these listeners on focus/blur because then you would need to have those 2 listeners running the whole time anyway...
+                        this.telInput.on("keypress" + this.ns, function(e) {
+                            // 32 is space, and after that it's all chars (not meta/nav keys)
+                            // this fix is needed for Firefox, which triggers keypress event for some meta/nav keys
+                            // Update: also ignore if this is a metaKey e.g. FF and Safari trigger keypress on the v of Ctrl+v
+                            // Update: also check that we have utils before we do any autoFormat stuff
+                            if (e.which >= keys.SPACE && !e.metaKey && window.intlTelInputUtils && !that.telInput.prop("readonly")) {
+                                e.preventDefault();
+                                // allowed keys are just numeric keys and plus
+                                // we must allow plus for the case where the user does select-all and then hits plus to start typing a new number. we could refine this logic to first check that the selection contains a plus, but that wont work in old browsers, and I think it's overkill anyway
+                                var isAllowedKey = e.which >= keys.ZERO && e.which <= keys.NINE || e.which == keys.PLUS,
+                                    input = that.telInput[0],
+                                    noSelection = that.isGoodBrowser && input.selectionStart == input.selectionEnd,
+                                    max = that.telInput.attr("maxlength"),
+                                    val = that.telInput.val(), // assumes that if max exists, it is >0
+                                    isBelowMax = max ? val.length < max : true;
+                                // first: ensure we dont go over maxlength. we must do this here to prevent adding digits in the middle of the number
+                                // still reformat even if not an allowed key as they could by typing a formatting char, but ignore if there's a selection as doesn't make sense to replace selection with illegal char and then immediately remove it
+                                if (isBelowMax && (isAllowedKey || noSelection)) {
+                                    var newChar = isAllowedKey ? String.fromCharCode(e.which) : null;
+                                    that._handleInputKey(newChar, true);
+                                    // if something has changed, trigger the input event (which was otherwised squashed by the preventDefault)
+                                    if (val != that.telInput.val()) {
+                                        that.telInput.trigger("input");
+                                    }
+                                }
+                                if (!isAllowedKey) {
+                                    that._handleInvalidKey();
+                                }
+                            }
+                        });
+                    }
+                    // handle keyup event
+                    // for autoFormat: we use keyup to catch cut/paste events and also delete events (after the fact)
+                    this.telInput.on("keyup" + this.ns, function(e) {
+                        // the "enter" key event from selecting a dropdown item is triggered here on the input, because the document.keydown handler that initially handles that event triggers a focus on the input, and so the keyup for that same key event gets triggered here. weird, but just make sure we dont bother doing any re-formatting in this case (we've already done preventDefault in the keydown handler, so it wont actually submit the form or anything).
+                        // ALSO: ignore keyup if readonly
+                        if (e.which == keys.ENTER || that.telInput.prop("readonly")) {} else if (that.options.autoFormat && window.intlTelInputUtils) {
+                            var isCtrl = e.which == keys.CTRL || e.which == keys.CMD1 || e.which == keys.CMD2,
+                                input = that.telInput[0], // noSelection defaults to false for bad browsers, else would be reformatting on all ctrl keys e.g. select-all/copy
+                                noSelection = that.isGoodBrowser && input.selectionStart == input.selectionEnd, // cursorAtEnd defaults to false for bad browsers else they would never get a reformat on delete
+                                cursorAtEnd = that.isGoodBrowser && input.selectionStart == that.telInput.val().length;
+                            // if delete in the middle: reformat with no suffix (no need to reformat if delete at end)
+                            // if backspace: reformat with no suffix (need to reformat if at end to remove any lingering suffix - this is a feature)
+                            // if ctrl and no selection (i.e. could have just been a paste): reformat (if cursorAtEnd: add suffix)
+                            if (e.which == keys.DEL && !cursorAtEnd || e.which == keys.BSPACE || isCtrl && noSelection) {
+                                // important to remember never to add suffix on any delete key as can fuck up in ie8 so you can never delete a formatting char at the end
+                                that._handleInputKey(null, isCtrl && cursorAtEnd);
+                            }
+                            // prevent deleting the plus (if not in nationalMode)
+                            if (!that.options.nationalMode) {
+                                var val = that.telInput.val();
+                                if (val.substr(0, 1) != "+") {
+                                    // newCursorPos is current pos + 1 to account for the plus we are about to add
+                                    var newCursorPos = that.isGoodBrowser ? input.selectionStart + 1 : 0;
+                                    that.telInput.val("+" + val);
+                                    if (that.isGoodBrowser) {
+                                        input.setSelectionRange(newCursorPos, newCursorPos);
+                                    }
+                                }
+                            }
+                        } else {
+                            // if no autoFormat, just update flag
+                            that._updateFlagFromNumber(that.telInput.val());
+                        }
+                    });
+                },
+                // alert the user to an invalid key event
+                _handleInvalidKey: function() {
+                    var that = this;
+                    this.telInput.trigger("invalidkey").addClass("iti-invalid-key");
+                    setTimeout(function() {
+                        that.telInput.removeClass("iti-invalid-key");
+                    }, 100);
+                },
+                // when autoFormat is enabled: handle various key events on the input: the 2 main situations are 1) adding a new number character, which will replace any selection, reformat, and preserve the cursor position. and 2) reformatting on backspace, or paste event (etc)
+                _handleInputKey: function(newNumericChar, addSuffix) {
+                    var val = this.telInput.val(),
+                        numericBefore = this._getNumeric(val),
+                        originalLeftChar, // raw DOM element
+                        input = this.telInput[0],
+                        digitsOnRight = 0;
+                    if (this.isGoodBrowser) {
+                        // cursor strategy: maintain the number of digits on the right. we use the right instead of the left so that A) we dont have to account for the new digit (or digits if paste event), and B) we're always on the right side of formatting suffixes
+                        digitsOnRight = this._getDigitsOnRight(val, input.selectionEnd);
+                        // if handling a new number character: insert it in the right place
+                        if (newNumericChar) {
+                            // replace any selection they may have made with the new char
+                            val = val.substr(0, input.selectionStart) + newNumericChar + val.substring(input.selectionEnd, val.length);
+                        } else {
+                            // here we're not handling a new char, we're just doing a re-format (e.g. on delete/backspace/paste, after the fact), but we still need to maintain the cursor position. so make note of the char on the left, and then after the re-format, we'll count in the same number of digits from the right, and then keep going through any formatting chars until we hit the same left char that we had before.
+                            originalLeftChar = val.charAt(input.selectionStart - 1);
+                        }
+                    } else if (newNumericChar) {
+                        val += newNumericChar;
+                    }
+                    var numeric = this._getNumeric(val);
+                    if (this.options.preventInvalidDialCodes && val.charAt(0) == "+" && numeric.length && !this._hasPotentialDialCode(numeric, this.pcc, 0)) {
+                        this._handleInvalidKey();
+                        return;
+                    }
+                    // update the number and flag
+                    this.setNumber(val, addSuffix);
+                    val = this.telInput.val();
+                    var numericAfter = this._getNumeric(val),
+                        numericIsSame = numericBefore == numericAfter;
+                    if (this.options.preventInvalidNumbers && newNumericChar) {
+                        if (numericIsSame) {
+                            // if we're trying to add a new numeric char and the numeric digits haven't changed, then trigger invalid
+                            this._handleInvalidKey();
+                        } else if (numericBefore.length == numericAfter.length) {
+                            // preventInvalidNumbers edge case: adding digit in middle of full number, so a digit gets dropped from the end (numeric digits have changed but are same length)
+                            digitsOnRight--;
+                        }
+                    }
+                    // update the cursor position
+                    if (this.isGoodBrowser) {
+                        var newCursor;
+                        // if it was at the end, keep it there
+                        if (!digitsOnRight) {
+                            newCursor = val.length;
+                        } else {
+                            // else count in the same number of digits from the right
+                            newCursor = this._getCursorFromDigitsOnRight(val, digitsOnRight);
+                            // but if delete/paste etc, keep going left until hit the same left char as before
+                            if (!newNumericChar) {
+                                newCursor = this._getCursorFromLeftChar(val, newCursor, originalLeftChar);
+                            }
+                        }
+                        // set the new cursor
+                        input.setSelectionRange(newCursor, newCursor);
+                    }
+                },
+                // check if the given number contains a potentially valid dial code by recursing through the provided map
+                _hasPotentialDialCode: function(number, map, i) {
+                    var node = map[number.charAt(i)];
+                    if (!node) {
+                        return false;
+                    } else if (node === true) {
+                        return true;
+                    } else if (typeof node == "object") {
+                        if (number.length == i + 1) {
+                            return true;
+                        } else {
+                            return this._hasPotentialDialCode(number, node, i + 1);
+                        }
+                    }
+                },
+                // we start from the position in guessCursor, and work our way left until we hit the originalLeftChar or a number to make sure that after reformatting the cursor has the same char on the left in the case of a delete etc
+                _getCursorFromLeftChar: function(val, guessCursor, originalLeftChar) {
+                    for (var i = guessCursor; i > 0; i--) {
+                        var leftChar = val.charAt(i - 1);
+                        if (leftChar == originalLeftChar || $.isNumeric(leftChar)) {
+                            return i;
+                        }
+                    }
+                    return 0;
+                },
+                // after a reformat we need to make sure there are still the same number of digits to the right of the cursor
+                _getCursorFromDigitsOnRight: function(val, digitsOnRight) {
+                    for (var i = val.length - 1; i >= 0; i--) {
+                        if ($.isNumeric(val.charAt(i))) {
+                            if (--digitsOnRight === 0) {
+                                return i;
+                            }
+                        }
+                    }
+                    return 0;
+                },
+                // get the number of numeric digits to the right of the cursor so we can reposition the cursor correctly after the reformat has happened
+                _getDigitsOnRight: function(val, selectionEnd) {
+                    var digitsOnRight = 0;
+                    for (var i = selectionEnd; i < val.length; i++) {
+                        if ($.isNumeric(val.charAt(i))) {
+                            digitsOnRight++;
+                        }
+                    }
+                    return digitsOnRight;
+                },
+                // listen for focus and blur
+                _initFocusListeners: function() {
+                    var that = this;
+                    if (this.options.autoHideDialCode) {
+                        // mousedown decides where the cursor goes, so if we're focusing we must preventDefault as we'll be inserting the dial code, and we want the cursor to be at the end no matter where they click
+                        this.telInput.on("mousedown" + this.ns, function(e) {
+                            if (!that.telInput.is(":focus") && !that.telInput.val()) {
+                                e.preventDefault();
+                                // but this also cancels the focus, so we must trigger that manually
+                                that.telInput.focus();
+                            }
+                        });
+                    }
+                    this.telInput.on("focus" + this.ns, function(e) {
+                        var value = that.telInput.val();
+                        // save this to compare on blur
+                        that.telInput.data("focusVal", value);
+                        // on focus: if empty, insert the dial code for the currently selected flag
+                        if (that.options.autoHideDialCode && !value && !that.telInput.prop("readonly") && that.selectedCountryData.dialCode) {
+                            that._updateVal("+" + that.selectedCountryData.dialCode, true);
+                            // after auto-inserting a dial code, if the first key they hit is '+' then assume they are entering a new number, so remove the dial code. use keypress instead of keydown because keydown gets triggered for the shift key (required to hit the + key), and instead of keyup because that shows the new '+' before removing the old one
+                            that.telInput.one("keypress.plus" + that.ns, function(e) {
+                                if (e.which == keys.PLUS) {
+                                    // if autoFormat is enabled, this key event will have already have been handled by another keypress listener (hence we need to add the "+"). if disabled, it will be handled after this by a keyup listener (hence no need to add the "+").
+                                    var newVal = that.options.autoFormat && window.intlTelInputUtils ? "+" : "";
+                                    that.telInput.val(newVal);
+                                }
+                            });
+                            // after tabbing in, make sure the cursor is at the end we must use setTimeout to get outside of the focus handler as it seems the selection happens after that
+                            setTimeout(function() {
+                                var input = that.telInput[0];
+                                if (that.isGoodBrowser) {
+                                    var len = that.telInput.val().length;
+                                    input.setSelectionRange(len, len);
+                                }
+                            });
+                        }
+                    });
+                    this.telInput.on("blur" + this.ns, function() {
+                        if (that.options.autoHideDialCode) {
+                            // on blur: if just a dial code then remove it
+                            var value = that.telInput.val(),
+                                startsPlus = value.substr(0, 1) == "+";
+                            if (startsPlus) {
+                                var numeric = that._getNumeric(value);
+                                // if just a plus, or if just a dial code
+                                if (!numeric || that.selectedCountryData.dialCode == numeric) {
+                                    that.telInput.val("");
+                                }
+                            }
+                            // remove the keypress listener we added on focus
+                            that.telInput.off("keypress.plus" + that.ns);
+                        }
+                        // if autoFormat, we must manually trigger change event if value has changed
+                        if (that.options.autoFormat && window.intlTelInputUtils && that.telInput.val() != that.telInput.data("focusVal")) {
+                            that.telInput.trigger("change");
+                        }
+                    });
+                },
+                // extract the numeric digits from the given string
+                _getNumeric: function(s) {
+                    return s.replace(/\D/g, "");
+                },
+                // show the dropdown
+                _showDropdown: function() {
+                    this._setDropdownPosition();
+                    // update highlighting and scroll to active list item
+                    var activeListItem = this.countryList.children(".active");
+                    if (activeListItem.length) {
+                        this._highlightListItem(activeListItem);
+                    }
+                    // show it
+                    this.countryList.removeClass("hide");
+                    if (activeListItem.length) {
+                        this._scrollTo(activeListItem);
+                    }
+                    // bind all the dropdown-related listeners: mouseover, click, click-off, keydown
+                    this._bindDropdownListeners();
+                    // update the arrow
+                    this.selectedFlagInner.children(".arrow").addClass("up");
+                },
+                // decide where to position dropdown (depends on position within viewport, and scroll)
+                _setDropdownPosition: function() {
+
+                },
+
+                // we only bind dropdown listeners when the dropdown is open
+                _bindDropdownListeners: function() {
+                    var that = this;
+                    // when mouse over a list item, just highlight that one
+                    // we add the class "highlight", so if they hit "enter" we know which one to select
+                    this.countryList.on("mouseover" + this.ns, ".country", function(e) {
+                        that._highlightListItem($(this));
+                    });
+                    // listen for country selection
+                    this.countryList.on("click" + this.ns, ".country", function(e) {
+                        that._selectListItem($(this));
+                    });
+                    // click off to close
+                    // (except when this initial opening click is bubbling up)
+                    // we cannot just stopPropagation as it may be needed to close another instance
+                    var isOpening = true;
+                    $("html").on("click" + this.ns, function(e) {
+                        if (!isOpening) {
+                            that._closeDropdown();
+                        }
+                        isOpening = false;
+                    });
+                    // listen for up/down scrolling, enter to select, or letters to jump to country name.
+                    // use keydown as keypress doesn't fire for non-char keys and we want to catch if they
+                    // just hit down and hold it to scroll down (no keyup event).
+                    // listen on the document because that's where key events are triggered if no input has focus
+                    var query = "",
+                        queryTimer = null;
+                    $(document).on("keydown" + this.ns, function(e) {
+                        // prevent down key from scrolling the whole page,
+                        // and enter key from submitting a form etc
+                        e.preventDefault();
+                        if (e.which == keys.UP || e.which == keys.DOWN) {
+                            // up and down to navigate
+                            that._handleUpDownKey(e.which);
+                        } else if (e.which == keys.ENTER) {
+                            // enter to select
+                            that._handleEnterKey();
+                        } else if (e.which == keys.ESC) {
+                            // esc to close
+                            that._closeDropdown();
+                        } else if (e.which >= keys.A && e.which <= keys.Z || e.which == keys.SPACE) {
+                            // upper case letters (note: keyup/keydown only return upper case letters)
+                            // jump to countries that start with the query string
+                            if (queryTimer) {
+                                clearTimeout(queryTimer);
+                            }
+                            query += String.fromCharCode(e.which);
+                            that._searchForCountry(query);
+                            // if the timer hits 1 second, reset the query
+                            queryTimer = setTimeout(function() {
+                                query = "";
+                            }, 1e3);
+                        }
+                    });
+                },
+                // highlight the next/prev item in the list (and ensure it is visible)
+                _handleUpDownKey: function(key) {
+                    var current = this.countryList.children(".highlight").first();
+                    var next = key == keys.UP ? current.prev() : current.next();
+                    if (next.length) {
+                        // skip the divider
+                        if (next.hasClass("divider")) {
+                            next = key == keys.UP ? next.prev() : next.next();
+                        }
+                        this._highlightListItem(next);
+                        this._scrollTo(next);
+                    }
+                },
+                // select the currently highlighted item
+                _handleEnterKey: function() {
+                    var currentCountry = this.countryList.children(".highlight").first();
+                    if (currentCountry.length) {
+                        this._selectListItem(currentCountry);
+                    }
+                },
+                // find the first list item whose name starts with the query string
+                _searchForCountry: function(query) {
+                    for (var i = 0; i < this.countries.length; i++) {
+                        if (this._startsWith(this.countries[i].name, query)) {
+                            var listItem = this.countryList.children("[data-country-code=" + this.countries[i].iso2 + "]").not(".preferred");
+                            // update highlighting and scroll
+                            this._highlightListItem(listItem);
+                            this._scrollTo(listItem, true);
+                            break;
+                        }
+                    }
+                },
+                // check if (uppercase) string a starts with string b
+                _startsWith: function(a, b) {
+                    return a.substr(0, b.length).toUpperCase() == b;
+                },
+                // update the input's value to the given val
+                // if autoFormat=true, format it first according to the country-specific formatting rules
+                _updateVal: function(val, addSuffix) {
+                    var formatted;
+                    if (this.options.autoFormat && window.intlTelInputUtils) {
+                        formatted = intlTelInputUtils.formatNumber(val, this.selectedCountryData.iso2, addSuffix, this.options.preventInvalidNumbers);
+                        // ensure we dont go over maxlength. we must do this here to truncate any formatting suffix, and also handle paste events
+                        var max = this.telInput.attr("maxlength");
+                        if (max && formatted.length > max) {
+                            formatted = formatted.substr(0, max);
+                        }
+                    } else {
+                        // no autoFormat, so just insert the original value
+                        formatted = val;
+                    }
+                    this.telInput.val(formatted);
+                },
+                // check if need to select a new flag based on the given number
+                _updateFlagFromNumber: function(number) {
+                    // if we're in nationalMode and we're on US/Canada, make sure the number starts with a +1 so _getDialCode will be able to extract the area code
+                    // update: if we dont yet have selectedCountryData, but we're here (trying to update the flag from the number), that means we're initialising the plugin with a number that already has a dial code, so fine to ignore this bit
+                    if (this.options.nationalMode && this.selectedCountryData && this.selectedCountryData.dialCode == "1" && number.substr(0, 1) != "+") {
+                        number = "+1" + number;
+                    }
+                    // try and extract valid dial code from input
+                    var dialCode = this._getDialCode(number);
+                    //var dialCode = this._getPotentialDialCode(number);
+                    if (dialCode) {
+                        // check if one of the matching countries is already selected
+                        var countryCodes = this.countryCodes[this._getNumeric(dialCode)],
+                            alreadySelected = this.selectedCountryData && $.inArray(this.selectedCountryData.iso2, countryCodes) != -1;
+                        // if a matching country is not already selected (or this is an unknown NANP area code): choose the first in the list
+                        if (!alreadySelected || this._isUnknownNanp(number, dialCode)) {
+                            // if using onlyCountries option, countryCodes[0] may be empty, so we must find the first non-empty index
+                            for (var j = 0; j < countryCodes.length; j++) {
+                                if (countryCodes[j]) {
+                                    this._selectFlag(countryCodes[j]);
+                                    break;
+                                }
+                            }
+                        }
+                    } else if (number.charAt(0) == "+") {
+                        // no valid dial code, but only empty it if they've actually typed an invalid one, not just a plus
+                        if (number.length > 1) {
+                            this._selectFlag("");
+                        } else if (!this.selectedCountryData.iso2) {
+                            // if just a plus and there's no currently selecte country, revert to default
+                            this._selectFlag(this.options.defaultCountry.iso2);
+                        }
+                    }
+                },
+                // check if the given number contains an unknown area code from the North American Numbering Plan i.e. the only dialCode that could be extracted was +1 but the actual number's length is >=4
+                _isUnknownNanp: function(number, dialCode) {
+                    return dialCode == "+1" && this._getNumeric(number).length >= 4;
+                },
+                // remove highlighting from other list items and highlight the given item
+                _highlightListItem: function(listItem) {
+                    this.countryListItems.removeClass("highlight");
+                    listItem.addClass("highlight");
+                },
+                // find the country data for the given country code
+                // the ignoreOnlyCountriesOption is only used during init() while parsing the onlyCountries array
+                _getCountryData: function(countryCode, ignoreOnlyCountriesOption, allowFail) {
+                    var countryList = ignoreOnlyCountriesOption ? allCountries : this.countries;
+                    for (var i = 0; i < countryList.length; i++) {
+                        if (countryList[i].iso2 == countryCode) {
+                            return countryList[i];
+                        }
+                    }
+                    if (allowFail) {
+                        return null;
+                    } else {
+                        throw new Error("No country data for '" + countryCode + "'");
+                    }
+                },
+                // select the given flag, update the placeholder and the active list item
+                _selectFlag: function(countryCode) {
+                    // do this first as it will throw an error and stop if countryCode is invalid
+                    this.selectedCountryData = countryCode ? this._getCountryData(countryCode, false, false) : {};
+                    this.selectedFlagInner.attr("class", "iti-flag " + countryCode);
+                    // update the selected country's title attribute
+                    var title = countryCode ? this.selectedCountryData.name + ": +" + this.selectedCountryData.dialCode : "Unknown";
+                    this.selectedFlagInner.parent().attr("title", title);
+                    // and the input's placeholder
+                    this._updatePlaceholder();
+                    // update the active list item
+                    this.countryListItems.removeClass("active");
+                    if (countryCode) {
+                        this.countryListItems.children(".iti-flag." + countryCode).first().parent().addClass("active");
+                    }
+                },
+                // update the input placeholder to an example number from the currently selected country
+                _updatePlaceholder: function() {
+                    if (window.intlTelInputUtils && !this.hadInitialPlaceholder) {
+                        var iso2 = this.selectedCountryData.iso2,
+                            numberType = intlTelInputUtils.numberType[this.options.numberType || "FIXED_LINE"],
+                            placeholder = iso2 ? intlTelInputUtils.getExampleNumber(iso2, this.options.nationalMode, numberType) : "";
+                        this.telInput.attr("placeholder", placeholder);
+                    }
+                },
+                // called when the user selects a list item from the dropdown
+                _selectListItem: function(listItem) {
+                    // update selected flag and active list item
+                    var countryCode = listItem.attr("data-country-code");
+                    this._selectFlag(countryCode);
+                    this._closeDropdown();
+                    this._updateDialCode(listItem.attr("data-dial-code"), true);
+                    // always fire the change event as even if nationalMode=true (and we haven't updated the input val), the system as a whole has still changed - see country-sync example. think of it as making a selection from a select element.
+                    this.telInput.trigger("change");
+                    // focus the input
+                    this.telInput.focus();
+                },
+                // close the dropdown and unbind any listeners
+                _closeDropdown: function() {
+                    this.countryList.addClass("hide");
+                    // update the arrow
+                    this.selectedFlagInner.children(".arrow").removeClass("up");
+                    // unbind key events
+                    $(document).off(this.ns);
+                    // unbind click-off-to-close
+                    $("html").off(this.ns);
+                    // unbind hover and click listeners
+                    this.countryList.off(this.ns);
+                },
+                // check if an element is visible within it's container, else scroll until it is
+                _scrollTo: function(element, middle) {
+                    var container = this.countryList,
+                        containerHeight = container.height(),
+                        containerTop = container.offset().top,
+                        containerBottom = containerTop + containerHeight,
+                        elementHeight = element.outerHeight(),
+                        elementTop = element.offset().top,
+                        elementBottom = elementTop + elementHeight,
+                        newScrollTop = elementTop - containerTop + container.scrollTop(),
+                        middleOffset = containerHeight / 2 - elementHeight / 2;
+                    if (elementTop < containerTop) {
+                        // scroll up
+                        if (middle) {
+                            newScrollTop -= middleOffset;
+                        }
+                        container.scrollTop(newScrollTop);
+                    } else if (elementBottom > containerBottom) {
+                        // scroll down
+                        if (middle) {
+                            newScrollTop += middleOffset;
+                        }
+                        var heightDifference = containerHeight - elementHeight;
+                        container.scrollTop(newScrollTop - heightDifference);
+                    }
+                },
+                // replace any existing dial code with the new one (if not in nationalMode)
+                // also we need to know if we're focusing for a couple of reasons e.g. if so, we want to add any formatting suffix, also if the input is empty and we're not in nationalMode, then we want to insert the dial code
+                _updateDialCode: function(newDialCode, focusing) {
+                    var inputVal = this.telInput.val(),
+                        newNumber;
+                    // save having to pass this every time
+                    newDialCode = "+" + newDialCode;
+                    if (this.options.nationalMode && inputVal.substr(0, 1) != "+") {
+                        // if nationalMode, we just want to re-format
+                        newNumber = inputVal;
+                    } else if (inputVal) {
+                        // if the previous number contained a valid dial code, replace it
+                        // (if more than just a plus character)
+                        var prevDialCode = this._getDialCode(inputVal);
+                        if (prevDialCode.length > 1) {
+                            newNumber = inputVal.replace(prevDialCode, newDialCode);
+                        } else {
+                            // if the previous number didn't contain a dial code, we should persist it
+                            var existingNumber = inputVal.substr(0, 1) != "+" ? $.trim(inputVal) : "";
+                            newNumber = newDialCode + existingNumber;
+                        }
+                    } else {
+                        newNumber = !this.options.autoHideDialCode || focusing ? newDialCode : "";
+                    }
+                    this._updateVal(newNumber, focusing);
+                },
+                // try and extract a valid international dial code from a full telephone number
+                // Note: returns the raw string inc plus character and any whitespace/dots etc
+                _getDialCode: function(number) {
+                    var dialCode = "";
+                    // only interested in international numbers (starting with a plus)
+                    if (number.charAt(0) == "+") {
+                        var numericChars = "";
+                        // iterate over chars
+                        for (var i = 0; i < number.length; i++) {
+                            var c = number.charAt(i);
+                            // if char is number
+                            if ($.isNumeric(c)) {
+                                numericChars += c;
+                                // if current numericChars make a valid dial code
+                                if (this.countryCodes[numericChars]) {
+                                    // store the actual raw string (useful for matching later)
+                                    dialCode = number.substr(0, i + 1);
+                                }
+                                // longest dial code is 4 chars
+                                if (numericChars.length == 4) {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    return dialCode;
+                },
+                /********************
+                 *  PUBLIC METHODS
+                 ********************/
+                // remove plugin
+                destroy: function() {
+                    // make sure the dropdown is closed (and unbind listeners)
+                    this._closeDropdown();
+                    // key events, and focus/blur events if autoHideDialCode=true
+                    this.telInput.off(this.ns);
+                    // click event to open dropdown
+                    this.selectedFlagInner.parent().off(this.ns);
+                    // label click hack
+                    this.telInput.closest("label").off(this.ns);
+                    // remove markup
+                    var container = this.telInput.parent();
+                    container.before(this.telInput).remove();
+                },
+                // format the number to the given type
+                getNumber: function(type) {
+                    if (window.intlTelInputUtils) {
+                        return intlTelInputUtils.formatNumberByType(this.telInput.val(), this.selectedCountryData.iso2, type);
+                    }
+                    return "";
+                },
+                // get the type of the entered number e.g. landline/mobile
+                getNumberType: function() {
+                    if (window.intlTelInputUtils) {
+                        return intlTelInputUtils.getNumberType(this.telInput.val(), this.selectedCountryData.iso2);
+                    }
+                    return -99;
+                },
+                // get the country data for the currently selected flag
+                getSelectedCountryData: function() {
+                    // if this is undefined, the plugin will return it's instance instead, so in that case an empty object makes more sense
+                    return this.selectedCountryData || {};
+                },
+                // get the validation error
+                getValidationError: function() {
+                    if (window.intlTelInputUtils) {
+                        return intlTelInputUtils.getValidationError(this.telInput.val(), this.selectedCountryData.iso2);
+                    }
+                    return -99;
+                },
+                // validate the input val - assumes the global function isValidNumber (from utilsScript)
+                isValidNumber: function() {
+                    var val = $.trim(this.telInput.val()),
+                        countryCode = this.options.nationalMode ? this.selectedCountryData.iso2 : "", // libphonenumber allows alpha chars, but in order to allow that, we'd need a method to retrieve the processed number, with letters replaced with numbers
+                        containsAlpha = /[a-zA-Z]/.test(val);
+                    if (!containsAlpha && window.intlTelInputUtils) {
+                        return intlTelInputUtils.isValidNumber(val, countryCode);
+                    }
+                    return false;
+                },
+                // load the utils script
+                loadUtils: function(path) {
+                    var utilsScript = path || this.options.utilsScript;
+                    if (!$.fn[pluginName].loadedUtilsScript && utilsScript) {
+                        // don't do this twice! (dont just check if the global intlTelInputUtils exists as if init plugin multiple times in quick succession, it may not have finished loading yet)
+                        $.fn[pluginName].loadedUtilsScript = true;
+                        // dont use $.getScript as it prevents caching
+                        $.ajax({
+                            url: utilsScript,
+                            success: function() {
+                                // tell all instances the utils are ready
+                                $(".intl-tel-input input").intlTelInput("utilsLoaded");
+                            },
+                            dataType: "script",
+                            cache: true
+                        });
+                    }
+                },
+                // update the selected flag, and update the input val accordingly
+                selectCountry: function(countryCode) {
+                    // check if already selected
+                    if (!this.selectedFlagInner.hasClass(countryCode)) {
+                        this._selectFlag(countryCode);
+                        this._updateDialCode(this.selectedCountryData.dialCode, false);
+                    }
+                },
+                // set the input value and update the flag
+                setNumber: function(number, addSuffix) {
+                    // ensure starts with plus
+                    if (!this.options.nationalMode && number.substr(0, 1) != "+") {
+                        number = "+" + number;
+                    }
+                    // we must update the flag first, which updates this.selectedCountryData, which is used later for formatting the number before displaying it
+                    this._updateFlagFromNumber(number);
+                    this._updateVal(number, addSuffix);
+                },
+                // this is called when the utils are ready
+                utilsLoaded: function() {
+                    // if autoFormat is enabled and there's an initial value in the input, then format it
+                    if (this.options.autoFormat && this.telInput.val()) {
+                        this._updateVal(this.telInput.val());
+                    }
+                    this._updatePlaceholder();
+                }
+            };
+            // adapted to allow public functions
+            // using https://github.com/jquery-boilerplate/jquery-boilerplate/wiki/Extending-jQuery-Boilerplate
+            $.fn[pluginName] = function(options) {
+                var args = arguments;
+                // Is the first parameter an object (options), or was omitted,
+                // instantiate a new instance of the plugin.
+                if (options === undefined || typeof options === "object") {
+                    return this.each(function() {
+                        if (!$.data(this, "plugin_" + pluginName)) {
+                            $.data(this, "plugin_" + pluginName, new Plugin(this, options));
+                        }
+                    });
+                } else if (typeof options === "string" && options[0] !== "_" && options !== "init") {
+                    // If the first parameter is a string and it doesn't start
+                    // with an underscore or "contains" the `init`-function,
+                    // treat this as a call to a public method.
+                    // Cache the method call to make it possible to return a value
+                    var returns;
+                    this.each(function() {
+                        var instance = $.data(this, "plugin_" + pluginName);
+                        // Tests that there's already a plugin-instance
+                        // and checks that the requested public method exists
+                        if (instance instanceof Plugin && typeof instance[options] === "function") {
+                            // Call the method of our plugin instance,
+                            // and pass it the supplied arguments.
+                            returns = instance[options].apply(instance, Array.prototype.slice.call(args, 1));
+                        }
+                        // Allow instances to be destroyed via the 'destroy' method
+                        if (options === "destroy") {
+                            $.data(this, "plugin_" + pluginName, null);
+                        }
+                    });
+                    // If the earlier cached method gives a value back return the value,
+                    // otherwise return this to preserve chainability.
+                    return returns !== undefined ? returns : this;
+                }
+            };
+            /********************
+             *  STATIC METHODS
+             ********************/
+            // get the country data object
+            $.fn[pluginName].getCountryData = function() {
+                return allCountries;
+            };
+            // Tell JSHint to ignore this warning: "character may get silently deleted by one or more browsers"
+            // jshint -W100
+            // Array of country objects for the flag dropdown.
+            // Each contains a name, country code (ISO 3166-1 alpha-2) and dial code.
+            // Originally from https://github.com/mledoze/countries
+            // then modified using the following JavaScript (NOW OUT OF DATE):
+            /*
+var result = [];
+_.each(countries, function(c) {
+  // ignore countries without a dial code
+  if (c.callingCode[0].length) {
+    result.push({
+      // var locals contains country names with localised versions in brackets
+      n: _.findWhere(locals, {
+        countryCode: c.cca2
+      }).name,
+      i: c.cca2.toLowerCase(),
+      d: c.callingCode[0]
+    });
+  }
+});
+JSON.stringify(result);
+*/
+            // then with a couple of manual re-arrangements to be alphabetical
+            // then changed Kazakhstan from +76 to +7
+            // and Vatican City from +379 to +39 (see issue 50)
+            // and Caribean Netherlands from +5997 to +599
+            // and Curacao from +5999 to +599
+            // Removed: Åland Islands, Christmas Island, Cocos Islands, Guernsey, Isle of Man, Jersey, Kosovo, Mayotte, Pitcairn Islands, South Georgia, Svalbard, Western Sahara
+            // Update: converted objects to arrays to save bytes!
+            // Update: added "priority" for countries with the same dialCode as others
+            // Update: added array of area codes for countries with the same dialCode as others
+            // So each country array has the following information:
+            // [
+            //    Country name,
+            //    iso2 code,
+            //    International dial code,
+            //    Order (if >1 country with same dial code),
+            //    Area codes (if >1 country with same dial code)
+            // ]
+            var allCountries = [
+                ["Afghanistan", "af", "93"],
+                ["Albania", "al", "355"],
+                ["Algeria", "dz", "213"],
+                ["American Samoa", "as", "1684"],
+                ["Andorra", "ad", "376"],
+                ["Angola", "ao", "244"],
+                ["Anguilla", "ai", "1264"],
+                ["Antigua and Barbuda", "ag", "1268"],
+                ["Argentina", "ar", "54"],
+                ["Armenia", "am", "374"],
+                ["Aruba", "aw", "297"],
+                ["Australia", "au", "61"],
+                ["Austria", "at", "43"],
+                ["Azerbaijan", "az", "994"],
+                ["Bahamas", "bs", "1242"],
+                ["Bahrain", "bh", "973"],
+                ["Bangladesh", "bd", "880"],
+                ["Barbados", "bb", "1246"],
+                ["Belarus", "by", "375"],
+                ["Belgium", "be", "32"],
+                ["Belize", "bz", "501"],
+                ["Benin", "bj", "229"],
+                ["Bermuda", "bm", "1441"],
+                ["Bhutan", "bt", "975"],
+                ["Bolivia", "bo", "591"],
+                ["Bosnia and Herzegovina", "ba", "387"],
+                ["Botswana", "bw", "267"],
+                ["Brazil", "br", "55"],
+                ["British Indian Ocean Territory", "io", "246"],
+                ["British Virgin Islands", "vg", "1284"],
+                ["Brunei", "bn", "673"],
+                ["Bulgaria", "bg", "359"],
+                ["Burkina Faso", "bf", "226"],
+                ["Burundi", "bi", "257"],
+                ["Cambodia", "kh", "855"],
+                ["Cameroon", "cm", "237"],
+                ["Canada", "ca", "1", 1, ["204", "226", "236", "249", "250", "289", "306", "343", "365", "387", "403", "416", "418", "431", "437", "438", "450", "506", "514", "519", "548", "579", "581", "587", "604", "613", "639", "647", "672", "705", "709", "742", "778", "780", "782", "807", "819", "825", "867", "873", "902", "905"]],
+                ["Cape Verde", "cv", "238"],
+                ["Caribbean Netherlands", "bq", "599", 1],
+                ["Cayman Islands", "ky", "1345"],
+                ["Central African Republic", "cf", "236"],
+                ["Chad", "td", "235"],
+                ["Chile", "cl", "56"],
+                ["China", "cn", "86"],
+                ["Colombia", "co", "57"],
+                ["Comoros", "km", "269"],
+                ["Congo (DRC)", "cd", "243"],
+                ["Congo (Republic)", "cg", "242"],
+                ["Cook Islands", "ck", "682"],
+                ["Costa Rica", "cr", "506"],
+                ["Côte d’Ivoire", "ci", "225"],
+                ["Croatia", "hr", "385"],
+                ["Cuba", "cu", "53"],
+                ["Curaçao", "cw", "599", 0],
+                ["Cyprus", "cy", "357"],
+                ["Czech Republic", "cz", "420"],
+                ["Denmark", "dk", "45"],
+                ["Djibouti", "dj", "253"],
+                ["Dominica", "dm", "1767"],
+                ["Dominican Republic", "do", "1", 2, ["809", "829", "849"]],
+                ["Ecuador", "ec", "593"],
+                ["Egypt", "eg", "20"],
+                ["El Salvador", "sv", "503"],
+                ["Equatorial Guinea", "gq", "240"],
+                ["Eritrea", "er", "291"],
+                ["Estonia", "ee", "372"],
+                ["Ethiopia", "et", "251"],
+                ["Falkland Islands", "fk", "500"],
+                ["Faroe Islands", "fo", "298"],
+                ["Fiji", "fj", "679"],
+                ["Finland", "fi", "358"],
+                ["France", "fr", "33"],
+                ["French Guiana", "gf", "594"],
+                ["French Polynesia", "pf", "689"],
+                ["Gabon", "ga", "241"],
+                ["Gambia", "gm", "220"],
+                ["Georgia", "ge", "995"],
+                ["Germany(Deutschland)", "de", "49"],
+                ["Ghana", "gh", "233"],
+                ["Gibraltar", "gi", "350"],
+                ["Greece", "gr", "30"],
+                ["Greenland", "gl", "299"],
+                ["Grenada", "gd", "1473"],
+                ["Guadeloupe", "gp", "590", 0],
+                ["Guam", "gu", "1671"],
+                ["Guatemala", "gt", "502"],
+                ["Guinea", "gn", "224"],
+                ["Guinea-Bissau", "gw", "245"],
+                ["Guyana", "gy", "592"],
+                ["Haiti", "ht", "509"],
+                ["Honduras", "hn", "504"],
+                ["Hong Kong", "hk", "852"],
+                ["Hungary", "hu", "36"],
+                ["Iceland", "is", "354"],
+                ["India", "in", "91"],
+                ["Indonesia", "id", "62"],
+                ["Iran", "ir", "98"],
+                ["Iraq", "iq", "964"],
+                ["Ireland", "ie", "353"],
+                ["Israel", "il", "972"],
+                ["Italy", "it", "39", 0],
+                ["Jamaica", "jm", "1876"],
+                ["Japan", "jp", "81"],
+                ["Jordan", "jo", "962"],
+                ["Kazakhstan", "kz", "7", 1],
+                ["Kenya", "ke", "254"],
+                ["Kiribati", "ki", "686"],
+                ["Kuwait", "kw", "965"],
+                ["Kyrgyzstan", "kg", "996"],
+                ["Laos", "la", "856"],
+                ["Latvia", "lv", "371"],
+                ["Lebanon", "lb", "961"],
+                ["Lesotho", "ls", "266"],
+                ["Liberia", "lr", "231"],
+                ["Libya", "ly", "218"],
+                ["Liechtenstein", "li", "423"],
+                ["Lithuania", "lt", "370"],
+                ["Luxembourg", "lu", "352"],
+                ["Macau", "mo", "853"],
+                ["Macedonia", "mk", "389"],
+                ["Madagascar", "mg", "261"],
+                ["Malawi", "mw", "265"],
+                ["Malaysia", "my", "60"],
+                ["Maldives", "mv", "960"],
+                ["Mali", "ml", "223"],
+                ["Malta", "mt", "356"],
+                ["Marshall Islands", "mh", "692"],
+                ["Martinique", "mq", "596"],
+                ["Mauritania", "mr", "222"],
+                ["Mauritius", "mu", "230"],
+                ["Mexico", "mx", "52"],
+                ["Micronesia", "fm", "691"],
+                ["Moldova", "md", "373"],
+                ["Monaco", "mc", "377"],
+                ["Mongolia", "mn", "976"],
+                ["Montenegro", "me", "382"],
+                ["Montserrat", "ms", "1664"],
+                ["Morocco", "ma", "212"],
+                ["Mozambique", "mz", "258"],
+                ["Myanmar", "mm", "95"],
+                ["Namibia", "na", "264"],
+                ["Nauru", "nr", "674"],
+                ["Nepal", "np", "977"],
+                ["Netherlands", "nl", "31"],
+                ["New Caledonia", "nc", "687"],
+                ["New Zealand", "nz", "64"],
+                ["Nicaragua", "ni", "505"],
+                ["Niger", "ne", "227"],
+                ["Nigeria", "ng", "234"],
+                ["Niue", "nu", "683"],
+                ["Norfolk Island", "nf", "672"],
+                ["North Korea", "kp", "850"],
+                ["Northern Mariana Islands", "mp", "1670"],
+                ["Norway (Norge)", "no", "47"],
+                ["Oman", "om", "968"],
+                ["Pakistan", "pk", "92"],
+                ["Palau", "pw", "680"],
+                ["Palestine", "ps", "970"],
+                ["Panama", "pa", "507"],
+                ["Papua New Guinea", "pg", "675"],
+                ["Paraguay", "py", "595"],
+                ["Peru", "pe", "51"],
+                ["Philippines", "ph", "63"],
+                ["Poland", "pl", "48"],
+                ["Portugal", "pt", "351"],
+                ["Puerto Rico", "pr", "1", 3, ["787", "939"]],
+                ["Qatar", "qa", "974"],
+                ["Réunion", "re", "262"],
+                ["Romania", "ro", "40"],
+                ["Russia", "ru", "7", 0],
+                ["Rwanda", "rw", "250"],
+                ["Saint Barthélemy", "bl", "590", 1],
+                ["Saint Helena", "sh", "290"],
+                ["Saint Kitts and Nevis", "kn", "1869"],
+                ["Saint Lucia", "lc", "1758"],
+                ["Saint Martin", "mf", "590", 2],
+                ["Saint Pierre and Miquelon", "pm", "508"],
+                ["Saint Vincent and the Grenadines", "vc", "1784"],
+                ["Samoa", "ws", "685"],
+                ["San Marino", "sm", "378"],
+                ["São Tomé and Príncipe", "st", "239"],
+                ["Saudi Arabia", "sa", "966"],
+                ["Senegal", "sn", "221"],
+                ["Serbia", "rs", "381"],
+                ["Seychelles", "sc", "248"],
+                ["Sierra Leone", "sl", "232"],
+                ["Singapore", "sg", "65"],
+                ["Sint Maarten", "sx", "1721"],
+                ["Slovakia", "sk", "421"],
+                ["Slovenia", "si", "386"],
+                ["Solomon Islands", "sb", "677"],
+                ["Somalia", "so", "252"],
+                ["South Africa", "za", "27"],
+                ["South Korea", "kr", "82"],
+                ["South Sudan", "ss", "211"],
+                ["Spain", "es", "34"],
+                ["Sri Lanka", "lk", "94"],
+                ["Sudan", "sd", "249"],
+                ["Suriname", "sr", "597"],
+                ["Swaziland", "sz", "268"],
+                ["Sweden", "se", "46"],
+                ["Switzerland", "ch", "41"],
+                ["Syria", "sy", "963"],
+                ["Taiwan", "tw", "886"],
+                ["Tajikistan", "tj", "992"],
+                ["Tanzania", "tz", "255"],
+                ["Thailand", "th", "66"],
+                ["Timor-Leste", "tl", "670"],
+                ["Togo", "tg", "228"],
+                ["Tokelau", "tk", "690"],
+                ["Tonga", "to", "676"],
+                ["Trinidad and Tobago", "tt", "1868"],
+                ["Tunisia", "tn", "216"],
+                ["Turkey", "tr", "90"],
+                ["Turkmenistan", "tm", "993"],
+                ["Turks and Caicos Islands", "tc", "1649"],
+                ["Tuvalu", "tv", "688"],
+                ["U.S. Virgin Islands", "vi", "1340"],
+                ["Uganda", "ug", "256"],
+                ["Ukraine", "ua", "380"],
+                ["United Arab Emirates", "ae", "971"],
+                ["United Kingdom", "gb", "44"],
+                ["United States", "us", "1", 0],
+                ["Uruguay", "uy", "598"],
+                ["Uzbekistan", "uz", "998"],
+                ["Vanuatu", "vu", "678"],
+                ["Vatican City", "va", "39", 1],
+                ["Venezuela", "ve", "58"],
+                ["Vietnam", "vn", "84"],
+                ["Wallis and Futuna", "wf", "681"],
+                ["Yemen", "ye", "967"],
+                ["Zambia", "zm", "260"],
+                ["Zimbabwe", "zw", "263"]
+            ];
+            // loop over all of the countries above
+            for (var i = 0; i < allCountries.length; i++) {
+                var c = allCountries[i];
+                allCountries[i] = {
+                    name: c[0],
+                    iso2: c[1],
+                    dialCode: c[2],
+                    priority: c[3] || 0,
+                    areaCodes: c[4] || null
+                };
+            }
+        });
+
+        $("input[name=pno]").intlTelInput({
+            //autoFormat: false,
+            //autoHideDialCode: false,
+            //defaultCountry: "jp",
+            nationalMode: false,
+            //onlyCountries: ['us', 'ch', 'ca', 'do'],
+            //preferredCountries: ['cn', 'jp'],
+            //responsiveDropdown: true
+            //preventInvalidNumbers: true,
+            preventInvalidDialCodes: true
+        });
+    </script>
+</body>
+
+</html>

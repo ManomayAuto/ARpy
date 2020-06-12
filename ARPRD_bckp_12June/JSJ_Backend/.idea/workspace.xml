@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5933f0ab-0d0c-497f-a082-0a586eecba0c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1X6b73AhX67gvQQrhkakaLqFXex" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Raj/Quote_python" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\consultants1\Raj\Quote_python" />
+      <recent name="C:\Users\consultants1\Python\JSJ_Backend" />
+      <recent name="C:\Users\consultants1\Python\JSJ_Backend\Reporting\final" />
+      <recent name="C:\Users\consultants1\Python\JSJ_Backend\Reporting" />
+      <recent name="C:\Users\Manomay Consultany\Desktop\JSJ\PYTHONBKUP" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Ar_backend_17_1Apr">
+    <configuration name="AEEscalation1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JSJ_Backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Reporting/final" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Reporting/final/AEEscalation1.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ar_backend_11Apr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JSJ_Backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ar_backend_11Apr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Ar_backend_17_1Apr" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JSJ_Backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ar_backend_17_1Apr.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Testpyxl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JSJ_Backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Reporting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Reporting/Testpyxl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="jsj_backend" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="JSJ_Backend" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\python\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsj_backend.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.AEEscalation1" />
+      <item itemvalue="Python.Ar_backend_11Apr" />
+      <item itemvalue="Python.Ar_backend_17_1Apr" />
+      <item itemvalue="Python.Testpyxl" />
+      <item itemvalue="Python.jsj_backend" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Ar_backend_17_1Apr" />
+        <item itemvalue="Python.AEEscalation1" />
+        <item itemvalue="Python.Ar_backend_11Apr" />
+        <item itemvalue="Python.Testpyxl" />
+        <item itemvalue="Python.jsj_backend" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5933f0ab-0d0c-497f-a082-0a586eecba0c" name="Default Changelist" comment="" />
+      <created>1580369320779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580369320779</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="503" y="54" key="#TestingBackend" timestamp="1582778484436">
+      <screen x="0" y="0" width="1536" height="826" />
+    </state>
+    <state x="503" y="54" key="#TestingBackend/0.0.1536.826@0.0.1536.826" timestamp="1582778484436" />
+    <state x="739" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1585798452918">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585798452918" />
+    <state x="509" y="60" key="#jsj_backend" timestamp="1582696032724">
+      <screen x="0" y="0" width="1536" height="832" />
+    </state>
+    <state x="509" y="60" key="#jsj_backend/0.0.1536.832@0.0.1536.832" timestamp="1582696032724" />
+    <state x="709" y="265" key="FileChooserDialogImpl" timestamp="1583388245431">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="263" key="FileChooserDialogImpl/0.0.1920.1032@0.0.1920.1032" timestamp="1583141532845" />
+    <state x="709" y="265" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583388245431" />
+    <state width="1344" height="136" key="GridCell.Tab.0.bottom" timestamp="1587193415137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1344" height="136" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1587193415137" />
+    <state width="1414" height="216" key="GridCell.Tab.0.bottom/0.0.1440.860/1440.0.1680.1010@0.0.1440.860" timestamp="1580823927987" />
+    <state width="1514" height="195" key="GridCell.Tab.0.bottom/0.0.1536.826@0.0.1536.826" timestamp="1582897326288" />
+    <state width="1501" height="271" key="GridCell.Tab.0.bottom/0.0.1536.832@0.0.1536.832" timestamp="1582698291166" />
+    <state width="1898" height="257" key="GridCell.Tab.0.bottom/0.0.1920.1032@0.0.1920.1032" timestamp="1583146153374" />
+    <state width="1898" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586934167012" />
+    <state width="1344" height="136" key="GridCell.Tab.0.center" timestamp="1587193415137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1344" height="136" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1587193415137" />
+    <state width="1414" height="216" key="GridCell.Tab.0.center/0.0.1440.860/1440.0.1680.1010@0.0.1440.860" timestamp="1580823927987" />
+    <state width="1514" height="195" key="GridCell.Tab.0.center/0.0.1536.826@0.0.1536.826" timestamp="1582897326288" />
+    <state width="1501" height="271" key="GridCell.Tab.0.center/0.0.1536.832@0.0.1536.832" timestamp="1582698291165" />
+    <state width="1898" height="257" key="GridCell.Tab.0.center/0.0.1920.1032@0.0.1920.1032" timestamp="1583146153374" />
+    <state width="1898" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586934167012" />
+    <state width="1344" height="136" key="GridCell.Tab.0.left" timestamp="1587193415121">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1344" height="136" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1587193415121" />
+    <state width="1414" height="216" key="GridCell.Tab.0.left/0.0.1440.860/1440.0.1680.1010@0.0.1440.860" timestamp="1580823927987" />
+    <state width="1514" height="195" key="GridCell.Tab.0.left/0.0.1536.826@0.0.1536.826" timestamp="1582897326287" />
+    <state width="1501" height="271" key="GridCell.Tab.0.left/0.0.1536.832@0.0.1536.832" timestamp="1582698291165" />
+    <state width="1898" height="257" key="GridCell.Tab.0.left/0.0.1920.1032@0.0.1920.1032" timestamp="1583146153374" />
+    <state width="1898" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586934167012" />
+    <state width="1344" height="136" key="GridCell.Tab.0.right" timestamp="1587193415137">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1344" height="136" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1587193415137" />
+    <state width="1414" height="216" key="GridCell.Tab.0.right/0.0.1440.860/1440.0.1680.1010@0.0.1440.860" timestamp="1580823927987" />
+    <state width="1514" height="195" key="GridCell.Tab.0.right/0.0.1536.826@0.0.1536.826" timestamp="1582897326288" />
+    <state width="1501" height="271" key="GridCell.Tab.0.right/0.0.1536.832@0.0.1536.832" timestamp="1582698291165" />
+    <state width="1898" height="257" key="GridCell.Tab.0.right/0.0.1920.1032@0.0.1920.1032" timestamp="1583146153374" />
+    <state width="1898" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586934167012" />
+    <state x="381" y="146" key="SettingsEditor" timestamp="1585903322448">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="381" y="145" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1583140217313" />
+    <state x="381" y="146" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585903322448" />
+    <state x="604" y="308" key="com.intellij.ide.util.TipDialog" timestamp="1589453608680">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="430" y="216" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587232048072" />
+    <state x="483" y="245" key="com.intellij.ide.util.TipDialog/0.0.1536.826@0.0.1536.826" timestamp="1582787535311" />
+    <state x="483" y="247" key="com.intellij.ide.util.TipDialog/0.0.1536.832@0.0.1536.832" timestamp="1582697041653" />
+    <state x="604" y="306" key="com.intellij.ide.util.TipDialog/0.0.1920.1032@0.0.1920.1032" timestamp="1583126183795" />
+    <state x="604" y="308" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589453608680" />
+  </component>
+</project>

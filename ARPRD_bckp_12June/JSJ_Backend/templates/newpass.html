@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Mantra</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet" />
+</head>
+<style>
+    .passcontainer1 {
+        margin: 0 auto;
+        width: 330px;
+        padding: 20px;
+        background: white;
+    }
+    
+    .passrow1 {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .passleft1 {
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .passright1 {
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    #frown1,
+    #meh1,
+    #smile1 {
+        font-size: 16px;
+        display: none;
+    }
+    
+    #frown1 {
+        color: red;
+    }
+    
+    #meh1 {
+        color: orange;
+    }
+    
+    #smile1 {
+        color: green;
+    }
+    
+    #passstatus1 {
+        font-size: 13px;
+        color: gray;
+    }
+    
+    #weaks1,
+    #meds1,
+    #strongs1 {
+        width: 50px;
+        height: 3px;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    .passrow31 {
+        line-height: 22px;
+        font-size: 13px;
+        width: 80%;
+        margin: 0 auto;
+        color: darkgray;
+    }
+    
+    #strong1 {
+        color: green;
+        font-size: 12px;
+    }
+    
+    #submit1,
+    #reset1 {
+        display: none;
+    }
+    
+    #output {
+        width: 100px;
+        margin: auto;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #ddd;
+    }
+</style>
+
+<body style="background-color:rgb(131, 230, 255);font-family: Roboto,"Helvetica Neue",sans-serif;">
+    <div>
+        <form id="pass">
+            <div class="modal-header">
+                <h4 class="modal-title">Change Password</h4>
+             <!--   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+            </div>
+            <div class="modal-body">
+                <div id="passy">
+
+                </div>
+                <br>
+                <div>
+                    <div class="passcontainer1">
+                        <div class="passrow1">
+                            <div class="passleft1">
+                                Password: &nbsp;
+                            </div>
+                            <div class="passright1">
+
+                                <input id="password1" type="password" name="Password1" maxlength="12">
+                            </div>
+                        </div>
+
+                        <div class="passrow21">
+                            <div class="strength1">
+                                <div id="weaks1"></div>
+                                <div id="meds1"></div>
+                                <div id="strongs1"></div>
+                            </div>
+                            <div class="passleft1">
+                                <div id="passstatus1"></div>
+                            </div>
+                        </div>
+
+
+                        <div class="passrow1">
+                            <div class="passleft1">
+                                Confirm Password: &nbsp;
+                            </div>
+                            <div class="passright1">
+                                <input id="confirmpassword1" name="password" type="password" maxlength="12">
+                            </div>
+
+                            <div class="passrow1">
+                                <div class="passleft1">
+                                    <div id="weak1">Weak</div>
+                                    <div id="medium1"> Medium</div>
+                                    <div id="strong1"> Passwords Match!</div>
+
+                                </div>
+                                <div class="passright1">
+                                    <i class="far fa-frown" id="frown1"></i>
+                                    <i class="far fa-meh" id="meh1"></i>
+                                    <i class="far fa-smile" id="smile1"></i>
+                                </div>
+                            </div>
+                            <div class="passrow1"><button type="button" id="submit1" value="Change Password" onclick="action1()">Change Password</button><br><input type="button" id="reset1" value="Clear" /></div>
+                            <div class="passrow31">
+                                <hr>
+                                <ul>
+                                    <li>  Password must contain at least 1 lowercase alphabetical character,1 uppercase alphabetical character,1 numeric character and minimum length is 6 characters and maximum length is 12 characters<br></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+</body>
+<script src="/static/js/jquery-3.3.1.js"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script>
+    function action1() {
+        var strongRegex = new RegExp("^(?=.*[a-z]{1,})(?=.*[A-Z]{1,})(?=.*[0-9]{1,})(?=.{6,})");
+        var pass = $("#password1");
+        var confirm = $("#confirmpassword1");
+        console.log(strongRegex.test(confirm.val()));
+        if (pass.val() == confirm.val() && strongRegex.test(confirm.val())) {
+            $.ajax({
+                url: '/password_reset',
+                type: 'post',
+                data: $('#pass').serialize(),
+                success: function(response) {
+                    /*obj = JSON.parse(response)*/
+                    $('#email_status').html(response);
+                    if (response == "OK") {
+                        alert("Password changed successfully");
+                        window.location.href = "http://192.193.194.127:4200/login";
+
+
+                    } else {
+                        alert(response);
+
+                    }
+                },
+                error: function(response) {
+                    alert("Cant change the password, There's been an error while processing your request");
+                     window.location.href = "/";
+                }
+            });
+        }
+        else{
+        console.log("hello");}
+    }
+    $(function e() {
+
+        var meh = $("#meh1");
+        var smile = $("#smile1");
+        var frown = $("#frown1");
+        var weak = $("#weak1");
+        var medium = $("#medium1");
+        var strong = $("#strong1");
+        var pass = $("#password1");
+        var confirm = $("#confirmpassword1");
+        var emojimess = $("#meh1, #smile1, #frown1, #weak1, #medium1, #strong1");
+        var status = $("#passstatus1");
+        var weaks = $("#weaks1");
+        var meds = $("#meds1");
+        var strongs = $("#strongs1");
+        var button = $("#submit1");
+        var container = $(".passcontainer1");
+        var reset = $("#reset1");
+
+
+        emojimess.hide();
+        confirm.attr("disabled", true);
+        button.hide();
+        reset.hide();
+
+        pass.keyup(function() {
+            var strongRegex = new RegExp("^(?=.*[a-z]{1,})(?=.*[A-Z]{1,})(?=.*[0-9]{1,})(?=.{6,12})");
+
+            if (strongRegex.test(pass.val())) {
+                status.html("Strong password!");
+                strongs.css("background", "green");
+                confirm.attr("disabled", false);
+                if (pass.val() == confirm.val()) {
+                    button.fadeIn();
+                }
+
+            } else if (mediumRegex.test(pass.val())) {
+                status.html("Medium-strength password");
+                meds.css("background", "orange");
+                strongs.css("background", "none");
+                confirm.attr("disabled", true);
+                button.css("display", "none");
+
+            } else {
+                status.html("Weak");
+                meds.css("background", "none");
+                strongs.css("background", "none");
+                weaks.css("background", "red");
+                confirm.attr("disabled", true);
+                button.css("display", "none");
+            }
+
+            if (pass.val() == 0) {
+                status.html('');
+                weaks.css("background", "none");
+                meds.css("background", "none");
+                strongs.css("background", "none");
+                confirm.attr("disabled", true);
+
+            }
+            if (confirm.val() != "") {
+                if (pass.val() == confirm.val()) {
+                    button.fadeOut();
+                    reset.fadeOut();
+                    strong.fadeOut();
+
+                }
+            }
+        })
+
+        confirm.keyup(function() {
+            if (pass.val() == confirm.val()) {
+                pass.css("border", "2px solid green");
+                confirm.css("border", "2px solid green");
+                button.fadeIn();
+                $(".passrow3").fadeOut();
+                smile.fadeIn();
+                strong.fadeIn();
+                reset.fadeIn();
+
+
+
+            } else {
+
+                confirm.css("border", "2px solid red");
+                button.fadeOut();
+            }
+        })
+        reset.click(function() {
+            pass.val('');
+            confirm.val('');
+            emojimess.hide();
+            status.html('');
+            weaks.css("background", "none");
+            meds.css("background", "none");
+            strongs.css("background", "none");
+            confirm.attr("disabled", true);
+            reset.hide();
+            button.hide();
+            $(".passrow3").fadeIn();
+            pass.css("border", "1px solid #b5b5b5");
+            confirm.css("border", "1px solid #b5b5b5");
+        })
+    })
+</script>
+
+</html>
